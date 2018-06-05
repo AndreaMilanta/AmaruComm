@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Sockets;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Net.Sockets;
 
 using ClientServer.Communication;
 using ClientServer.Messages;
+using AmaruCommon.Messages;
 
 namespace AmaruCommon.Client
 {
@@ -18,7 +14,9 @@ namespace AmaruCommon.Client
 
         protected override void HandleNewMessage(Message mex)
         {
-            throw new NotImplementedException();
+            if (!(mex is AmaruMessage))
+
+            if (mex is LoginMessage)
         }
     }
 }

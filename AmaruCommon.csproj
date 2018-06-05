@@ -43,7 +43,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="source\Client\Client.cs" />
     <Compile Include="source\Constants\NetworkConstants.cs" />
+    <Compile Include="source\Exceptions\InvalidMessageException.cs" />
     <Compile Include="source\Exceptions\UserNotFoundException.cs" />
+    <Compile Include="source\Messages\AmaruMessage.cs" />
+    <Compile Include="source\Messages\LoginMessage.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ClientServer\ClientServer.csproj">
