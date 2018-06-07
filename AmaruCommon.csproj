@@ -32,6 +32,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,12 +43,35 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="source\Client\Client.cs" />
+    <Compile Include="source\Communication\Messages\GameInitMessage.cs" />
+    <Compile Include="source\Communication\Messages\ShutdownMessage.cs" />
+    <Compile Include="source\Constants\Tools.cs" />
+    <Compile Include="source\Exceptions\LimitedListOutOfBoundException.cs" />
+    <Compile Include="source\Exceptions\InvalidCharacterException.cs" />
+    <Compile Include="source\Exceptions\ItemAlreadyInitializedException.cs" />
+    <Compile Include="source\Exceptions\ItemNotYetInitializedException.cs" />
+    <Compile Include="source\GameAssets\Actions\IActions.cs" />
+    <Compile Include="source\GameAssets\Bonus\IBonus.cs" />
+    <Compile Include="source\GameAssets\Bonus\IncreaseAttackBonus.cs" />
+    <Compile Include="source\GameAssets\Bonus\IncreaseHealthBonus.cs" />
+    <Compile Include="source\GameAssets\Bonus\InflictDamageBonus.cs" />
+    <Compile Include="source\Constants\LimitedList.cs" />
+    <Compile Include="source\GameAssets\Cards\DeckFactory.cs" />
+    <Compile Include="source\GameAssets\Cards\EquipmentCard.cs" />
+    <Compile Include="source\GameAssets\Cards\EventCard.cs" />
+    <Compile Include="source\GameAssets\Cards\Card.cs" />
+    <Compile Include="source\GameAssets\Cards\MonsterCard.cs" />
+    <Compile Include="source\GameAssets\Cards\SpellCard.cs" />
+    <Compile Include="source\GameAssets\Cards\TerrainCard.cs" />
+    <Compile Include="source\GameAssets\Characters\CharacterManager.cs" />
+    <Compile Include="source\GameAssets\Characters\CharacterEnum.cs" />
+    <Compile Include="source\Constants\AmaruConstants.cs" />
     <Compile Include="source\Constants\NetworkConstants.cs" />
-    <Compile Include="source\Exceptions\InvalidMessageException.cs" />
-    <Compile Include="source\Exceptions\UserNotFoundException.cs" />
-    <Compile Include="source\Messages\AmaruMessage.cs" />
-    <Compile Include="source\Messages\LoginMessage.cs" />
+    <Compile Include="source\Exceptions\InvalidUserCredentialsException.cs" />
+    <Compile Include="source\Communication\Messages\LoginMessage.cs" />
+    <Compile Include="source\Communication\Messages\LoginReplyMessage.cs" />
+    <Compile Include="source\GameAssets\Player\EnemyInfo.cs" />
+    <Compile Include="source\GameAssets\Player\OwnInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ClientServer\ClientServer.csproj">
@@ -57,6 +82,9 @@
       <Project>{5126f598-36fe-40d0-8bde-006a681ce886}</Project>
       <Name>Logging</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="source\GameAssets\Gameboard\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

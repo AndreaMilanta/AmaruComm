@@ -2,7 +2,7 @@
 
 namespace AmaruCommon.Exceptions
 {
-    public class UserNotFoundException : Exception
+    public class LimitedListOutOfBoundException : Exception
     {
     }
 }
