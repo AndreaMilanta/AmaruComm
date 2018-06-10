@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 
 namespace AmaruCommon.Constants
 {
@@ -26,5 +22,64 @@ namespace AmaruCommon.Constants
         public const int HAND_MAX_SIZE = 6;         // Maximum number of cards in hand
         public const int INNER_MAX_SIZE = 6;        // Maximum number of cards in inner zone
         public const int OUTER_MAX_SIZE = 6;        // Maximum number of cards in outer zone
+
+        // Cards constants
+        internal const int AUTO_ID = -1;            // Value used to set card id automatically !! MUST BE < 0 !!
     }
+
+    // Useful Enums
+
+    // Possible locations of a card
+    public enum Place
+    {
+        DECK,
+        HAND,
+        INNER,
+        OUTER,
+        CEMETERY
+    }
+
+    public enum Property
+    {
+        ATTACK,
+        ABILITY
+    }
+    
+    public enum Shield
+    {
+        NONE,
+        SHIELDUP,
+        SHIELDMAIDEN
+
+    }
+    
+    // LIST OF CARDS (for implementation see CardFactory.cs)
+
+    public enum Moraika
+    {
+
+    }
+    // Amaru
+    public enum Luna
+    {
+
+    }
+
+    // Amaru
+    public enum Leon
+    {
+
+    }
+    // Amaru
+    public enum Yaku
+    {
+
+    }
+
+    // Amaru
+    public enum Amaru
+    {
+
+    }
+
 }

@@ -14,10 +14,10 @@ namespace AmaruCommon.GameAssets.Player
         public int Mana { get; private set; }
         public int DeckSize { get; private set; }
         public List<Card> Hand { get; private set; }
-        public List<Card> Inner { get; private set; }
-        public List<Card> Outer { get; private set; }
+        public List<CreatureCard> Inner { get; private set; }
+        public List<CreatureCard> Outer { get; private set; }
 
-        public OwnInfo(CharacterEnum character, int health, int mana, int deckSize, List<Card> hand, List<Card> inner, List<Card> outer)
+        public OwnInfo(CharacterEnum character, int health, int mana, int deckSize, List<Card> hand, List<CreatureCard> inner, List<CreatureCard> outer)
         {
             this.Character = character;
             this.Health = health;

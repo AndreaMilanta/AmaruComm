@@ -14,6 +14,7 @@ namespace AmaruCommon.GameAssets.Cards
         /// </summary>
         public static List<Card> MoraikaDeck { get => Tools.Shuffle(new List<Card>() {
             // Insert cards declaration
+            // CardFactory.GetMoraikaCard(Moraika.-);
         }); }
         
         /// <summary>
@@ -21,6 +22,7 @@ namespace AmaruCommon.GameAssets.Cards
         /// </summary>
         public static List<Card> LunaDeck { get => Tools.Shuffle(new List<Card>() {
             // Insert cards declaration
+            // CardFactory.GetLunaCard(Luna.-);
         }); }
 
         /// <summary>
@@ -28,6 +30,7 @@ namespace AmaruCommon.GameAssets.Cards
         /// </summary>
         public static List<Card> LeonDeck { get => Tools.Shuffle(new List<Card>() {
             // Insert cards declaration
+            // CardFactory.GetLeonCard(Leon.-);
         }); }
 
         /// <summary>
@@ -35,6 +38,7 @@ namespace AmaruCommon.GameAssets.Cards
         /// </summary>
         public static List<Card> YakuDeck { get => Tools.Shuffle(new List<Card>() {
             // Insert cards declaration
+            // CardFactory.GetYakuCard(Yaku.-);
         }); }
 
         /// <summary>
@@ -42,6 +46,7 @@ namespace AmaruCommon.GameAssets.Cards
         /// </summary>
         public static List<Card> AmaruDeck { get => Tools.Shuffle(new List<Card>() {
             // Insert cards declaration
+            // CardFactory.GetAmaruCard(Amaru.-);
         }); }
 
         /// <summary>
