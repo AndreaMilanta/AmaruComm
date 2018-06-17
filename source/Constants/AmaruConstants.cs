@@ -8,9 +8,11 @@ namespace AmaruCommon.Constants
         public const string GAME_PREFIX = "Game_";
 
         // Game
-        public const int NUM_PLAYER = 4;
+        //public const int NUM_PLAYER = 4;
+        public const int NUM_PLAYER = 1;
         public const int NUM_CHARACTERS = 5;
-        public const int NUM_DISADVANTAGED = 2;     // Number of disadvantaged players (last - )
+        //public const int NUM_DISADVANTAGED = 2;     // Number of disadvantaged players (last - )
+        public const int NUM_DISADVANTAGED = 0;     // Number of disadvantaged players (last - )
 
         // Players
         public const int INITIAL_PLAYER_HEALTH = 20;    // Initial Health of a player
