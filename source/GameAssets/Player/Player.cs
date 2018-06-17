@@ -17,8 +17,8 @@ namespace AmaruCommon.GameAssets.Player
         // Properties
         public int Mana { get; set ; } = 0;
         public int Health { get; set; } = AmaruConstants.INITIAL_PLAYER_HEALTH;
-        public bool IsShieldUpProtected { get => Outer.Exists(o => o.Shield == Shield.SHIELDUP); }
-        public bool IsShieldMaidenProtected { get => Outer.Exists(o => o.Shield == Shield.SHIELDMAIDEN); }
+        public bool IsShieldUpProtected { get => Outer.Exists(o => o.Shield == Shield.SHIELDUP || o.Shield == Shield.BOTH); }
+        public bool IsShieldMaidenProtected { get => Outer.Exists(o => o.Shield == Shield.SHIELDMAIDEN || o.Shield == Shield.BOTH); }
         public bool IsAlive { get => Health > 0; }
         public bool InnerAttackAllowed { get => Outer.Exists(c => c.Effect is AttackFromInnerEffect) ||                         // Effect of card in outer
                                                 Inner.Exists(c => c.Effect is AttackFromInnerEffect) ||                         // Effect of card in inner
@@ -35,7 +35,7 @@ namespace AmaruCommon.GameAssets.Player
         public LimitedList<Card> Hand { get; private set; } = new LimitedList<Card>(AmaruConstants.HAND_MAX_SIZE);
         public LimitedList<CreatureCard> Inner { get; private set;} = new LimitedList<CreatureCard>(AmaruConstants.INNER_MAX_SIZE);
         public LimitedList<CreatureCard> Outer { get; private set; } = new LimitedList<CreatureCard>(AmaruConstants.OUTER_MAX_SIZE);
-        public List<Card> Cemetery { get; private set; } = new List<Card>();
+        public List<Card> Graveyard { get; private set; } = new List<Card>();
         public SpellCard PlayedSpell { get; private set; } = null;
         private ReadOnlyDictionary<Place, IEnumerable<Card>> _cardDict; 
 
@@ -55,7 +55,7 @@ namespace AmaruCommon.GameAssets.Player
                     {Place.HAND, Hand},
                     {Place.INNER, Inner},
                     {Place.OUTER, Outer},
-                    {Place.CEMETERY, Cemetery},
+                    {Place.CEMETERY, Graveyard},
                 });
         }
 

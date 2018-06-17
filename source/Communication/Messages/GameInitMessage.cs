@@ -12,11 +12,13 @@ namespace AmaruCommon.Communication.Messages
     {
         public Dictionary<CharacterEnum, EnemyInfo> EnemyDict { get; private set; }
         public OwnInfo Own { get; private set; }
+        public List<CharacterEnum> Order { get; private set; }
         
-        public GameInitMessage(Dictionary<CharacterEnum, EnemyInfo> enemyDict, OwnInfo own)
+        public GameInitMessage(Dictionary<CharacterEnum, EnemyInfo> enemyDict, OwnInfo own, List<CharacterEnum> order)
         {
             this.EnemyDict = enemyDict;
             this.Own = own;
+            this.Order = order;
         }
     }
 }

@@ -7,7 +7,7 @@ namespace AmaruCommon.GameAssets.Cards.Properties
 {
     public interface IPropertyVisitor
     {
-        void Visit(SimpleAttack attack);
-        void Visit(AttackFromInnerEffect effect);
+        int Visit(SimpleAttack attack);
+        int Visit(AttackFromInnerEffect effect);
     }
 }

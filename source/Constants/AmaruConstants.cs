@@ -49,8 +49,8 @@ namespace AmaruCommon.Constants
     {
         NONE,
         SHIELDUP,
-        SHIELDMAIDEN
-
+        SHIELDMAIDEN,
+        BOTH
     }
     
     // LIST OF CARDS (for implementation see CardFactory.cs)
