@@ -1,7 +1,7 @@
 ﻿using System;
 
 using AmaruCommon.Constants;
-using AmaruCommon.GameAssets.Cards.Properties;
+using AmaruCommon.GameAssets.Cards.Properties.Attacks;
 using AmaruCommon.GameAssets.Cards.Properties.Effects;
 using AmaruCommon.GameAssets.Cards.Properties.Abilities;
 

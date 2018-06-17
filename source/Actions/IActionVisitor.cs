@@ -6,6 +6,6 @@ namespace AmaruCommon.Actions
 {
     public interface IActionVisitor
     {
-        void Visit(PlayerAction action);
+        void Visit(AttackPlayerAction action);
     }
 }

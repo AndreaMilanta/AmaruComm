@@ -7,48 +7,61 @@ using AmaruCommon.Constants;
 using AmaruCommon.GameAssets.Cards;
 using AmaruCommon.GameAssets.Characters;
 using AmaruCommon.GameAssets.Player;
+using AmaruCommon.GameAssets.Cards.Properties.Abilities;
+using AmaruCommon.GameAssets.Cards.Properties.Effects;
 
 namespace AmaruCommon.GameAssets.Player
 {
     public class Player
     {
         // Properties
-        public int Mana { get; set; } = 0;
+        public int Mana { get; set ; } = 0;
         public int Health { get; set; } = AmaruConstants.INITIAL_PLAYER_HEALTH;
-        public bool isShieldUpProtected { get => _outer.Exists(o => o.Shield == Shield.SHIELDUP); }
-        public bool isShieldMaidenProtected { get => _outer.Exists(o => o.Shield == Shield.SHIELDMAIDEN); }
+        public bool IsShieldUpProtected { get => Outer.Exists(o => o.Shield == Shield.SHIELDUP); }
+        public bool IsShieldMaidenProtected { get => Outer.Exists(o => o.Shield == Shield.SHIELDMAIDEN); }
+        public bool IsAlive { get => Health > 0; }
+        public bool InnerAttackAllowed { get => Outer.Exists(c => c.Effect is AttackFromInnerEffect) ||                         // Effect of card in outer
+                                                Inner.Exists(c => c.Effect is AttackFromInnerEffect) ||                         // Effect of card in inner
+                                                (PlayedSpell == null ? false : PlayedSpell.Effect is AttackFromInnerEffect); }  // Effect of played spell card
+        public bool IsImmune { get; set; } = false;
+        public bool HasChanged { get; set; } = false;           // Wheter player has changed or not
+
+        private int _initialTurnMana = 0;
+
+        public int ManaPlayedCount { get => this.Mana - _initialTurnMana; }
 
         // Cards
-        private Stack<Card> _deck = null;
-        private LimitedList<Card> _hand = new LimitedList<Card>(AmaruConstants.HAND_MAX_SIZE);
-        private LimitedList<CreatureCard> _inner = new LimitedList<CreatureCard>(AmaruConstants.INNER_MAX_SIZE);
-        private LimitedList<CreatureCard> _outer = new LimitedList<CreatureCard>(AmaruConstants.OUTER_MAX_SIZE);
-        private List<Card> _cemetery = new List<Card>();
+        public Stack<Card> Deck { get; private set; } = null;
+        public LimitedList<Card> Hand { get; private set; } = new LimitedList<Card>(AmaruConstants.HAND_MAX_SIZE);
+        public LimitedList<CreatureCard> Inner { get; private set;} = new LimitedList<CreatureCard>(AmaruConstants.INNER_MAX_SIZE);
+        public LimitedList<CreatureCard> Outer { get; private set; } = new LimitedList<CreatureCard>(AmaruConstants.OUTER_MAX_SIZE);
+        public List<Card> Cemetery { get; private set; } = new List<Card>();
+        public SpellCard PlayedSpell { get; private set; } = null;
         private ReadOnlyDictionary<Place, IEnumerable<Card>> _cardDict; 
 
         // Communication
-        public EnemyInfo AsEnemy { get => new EnemyInfo(Character, Health, Mana, _deck.Count, _hand.Count, _inner, _outer); }
-        public OwnInfo AsOwn { get => new OwnInfo(Character,  Health, Mana, _deck.Count, _hand, _inner, _outer); }
+        public EnemyInfo AsEnemy { get => new EnemyInfo(Character, Health, Mana, Deck.Count, Hand.Count, Inner, Outer, PlayedSpell, IsImmune); }
+        public OwnInfo AsOwn { get => new OwnInfo(Character,  Health, Mana, Deck.Count, Hand, Inner, Outer, PlayedSpell, IsImmune); }
 
         public CharacterEnum Character { get; private set; } = CharacterEnum.INVALID;
          
         public Player(CharacterEnum character)
         {
             Character = character;
-            _deck = new Stack<Card>(DeckFactory.GetDeck(Character));
+            Deck = new Stack<Card>(DeckFactory.GetDeck(Character));
             // Initializes readonly dict
             _cardDict = new ReadOnlyDictionary<Place, IEnumerable<Card>>(new Dictionary<Place, IEnumerable<Card>>(){
-                    {Place.DECK, _deck},
-                    {Place.HAND, _hand},
-                    {Place.INNER, _inner},
-                    {Place.OUTER, _outer},
-                    {Place.CEMETERY, _cemetery},
+                    {Place.DECK, Deck},
+                    {Place.HAND, Hand},
+                    {Place.INNER, Inner},
+                    {Place.OUTER, Outer},
+                    {Place.CEMETERY, Cemetery},
                 });
         }
 
         public void Draw()
         {
-            _hand.Add(_deck.Pop());
+            Hand.Add(Deck.Pop());
         }
 
         public void Draw(int amount)
@@ -68,6 +81,11 @@ namespace AmaruCommon.GameAssets.Player
             if (place == Place.DECK)
                 throw new InvalidSearchLocation();
             return ((List<Card>)_cardDict[place]).Find(c => c.Id == id);
+        }
+
+        public void ResetManaCount()
+        {
+            _initialTurnMana = this.Mana;
         }
     }
 }

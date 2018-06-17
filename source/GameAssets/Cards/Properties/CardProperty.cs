@@ -3,7 +3,8 @@
 namespace AmaruCommon.GameAssets.Cards.Properties
 {
     [Serializable]
-    public class CardProperty
+    public abstract class CardProperty
     {
+        public abstract void Visit(IPropertyVisitor visitor);
     }
 }

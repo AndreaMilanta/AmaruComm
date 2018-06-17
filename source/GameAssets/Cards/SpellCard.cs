@@ -1,15 +1,18 @@
 ﻿using System;
 
 using AmaruCommon.Constants;
+using AmaruCommon.GameAssets.Cards.Properties.Effects;
 
 namespace AmaruCommon.GameAssets.Cards
 {
     [Serializable]
     public class SpellCard : Card
     {
-        public SpellCard(int cost, int id = AmaruConstants.AUTO_ID) : base(cost, id)
-        {
+        public Effect Effect { get; private set; }
 
+        public SpellCard(int cost, string name, Effect effect, int id = AmaruConstants.AUTO_ID) : base(cost, name, id)
+        {
+            this.Effect = effect;
         }
     }
 }
