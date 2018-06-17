@@ -69,8 +69,14 @@
     <Compile Include="source\Exceptions\CallerCannotPlayException.cs" />
     <Compile Include="source\Exceptions\PlayerCannotBeTargetedException.cs" />
     <Compile Include="source\Exceptions\TargetPlayerIsDeadException.cs" />
+    <Compile Include="source\GameAssets\Cards\Properties\Abilities\GainHPAbility.cs" />
+    <Compile Include="source\GameAssets\Cards\Properties\Attacks\GainCPAttack.cs" />
+    <Compile Include="source\GameAssets\Cards\Properties\Attacks\KrumAttack.cs" />
     <Compile Include="source\GameAssets\Cards\Properties\Abilities\Ability.cs" />
     <Compile Include="source\GameAssets\Cards\Properties\Attacks\ImperiaAttack.cs" />
+    <Compile Include="source\GameAssets\Cards\Properties\Attacks\GainHPAttack.cs" />
+    <Compile Include="source\GameAssets\Cards\Properties\Attacks\SalazarAttack.cs" />
+    <Compile Include="source\GameAssets\Cards\Properties\Attacks\PoisonAttack.cs" />
     <Compile Include="source\GameAssets\Cards\Properties\Attacks\SimpleAttack.cs" />
     <Compile Include="source\GameAssets\Cards\Properties\CardProperty.cs" />
     <Compile Include="source\GameAssets\Cards\Properties\Effects\AttackFromInnerEffect.cs" />
@@ -82,6 +88,7 @@
     <Compile Include="source\GameAssets\Cards\Card.cs" />
     <Compile Include="source\GameAssets\Cards\CreatureCard.cs" />
     <Compile Include="source\GameAssets\Cards\Properties\IPropertyVisitor.cs" />
+    <Compile Include="source\GameAssets\Cards\Properties\Attacks\SeribuAttack.cs" />
     <Compile Include="source\GameAssets\Cards\SpellCard.cs" />
     <Compile Include="source\Constants\AmaruConstants.cs" />
     <Compile Include="source\Constants\NetworkConstants.cs" />
