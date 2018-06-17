@@ -7,6 +7,7 @@ using AmaruCommon.GameAssets.Cards.Properties.Effects;
 
 namespace AmaruCommon.GameAssets.Cards.Properties.Attacks
 {
+    [Serializable]
     public class ImperiaAttack : Attack
     {
 

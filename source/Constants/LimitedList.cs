@@ -6,6 +6,7 @@ using AmaruCommon.Exceptions;
 
 namespace AmaruCommon.Constants
 {
+    [Serializable]
     public class LimitedList<T> : List<T> //where T: Object
     {
         public readonly int MaxSize;

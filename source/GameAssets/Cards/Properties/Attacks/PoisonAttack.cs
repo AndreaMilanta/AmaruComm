@@ -7,6 +7,7 @@ using AmaruCommon.GameAssets.Cards.Properties.Effects;
 
 namespace AmaruCommon.GameAssets.Cards.Properties.Attacks
 {
+    [Serializable]
     public class PoisonAttack : Attack
     {
         public int Power { get; private set; }
