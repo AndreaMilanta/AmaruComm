@@ -70,6 +70,7 @@
     <Compile Include="source\Exceptions\PlayerCannotBeTargetedException.cs" />
     <Compile Include="source\Exceptions\TargetPlayerIsDeadException.cs" />
     <Compile Include="source\GameAssets\Cards\Properties\Abilities\Ability.cs" />
+    <Compile Include="source\GameAssets\Cards\Properties\Attacks\ImperiaAttack.cs" />
     <Compile Include="source\GameAssets\Cards\Properties\Attacks\SimpleAttack.cs" />
     <Compile Include="source\GameAssets\Cards\Properties\CardProperty.cs" />
     <Compile Include="source\GameAssets\Cards\Properties\Effects\AttackFromInnerEffect.cs" />

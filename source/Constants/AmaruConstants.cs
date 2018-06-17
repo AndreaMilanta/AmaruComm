@@ -57,29 +57,73 @@ namespace AmaruCommon.Constants
 
     public enum Moraika
     {
-
+        Imperia,
+        RavenCrow,
+        PoolOfLight,
+        ElCondor,
+        PurewhiteAlbatross,
+        SacredOwl,
+        ImperialTucan,
+        WindFury,
+        HealthManagement,
+        InfinitePower
     }
     // Amaru
     public enum Luna
     {
-
+        Salazar,
+        BlackMamba,
+        GreenAnaconda,
+        ReticulatedPython,
+        RustyTaipan,
+        Rattlesnake,
+        DragonSnake,
+        Plague,
+        SmogBomb,
+        PoisonBomb
     }
 
     // Amaru
     public enum Leon
     {
-
+        Seribu,
+        LightingLynx,
+        ShieldedBear,
+        PatriarchBull,
+        WildHorse,
+        BloodborneRhino,
+        FieryLion,
+        Duplicator,
+        WarHorn,
+        Calf,
+        Bear
     }
     // Amaru
     public enum Yaku
     {
-
+        Krum,
+        BlackSeaNettle,
+        RoyalStarfish,
+        BigClawSnappingShrimp,
+        MuggerCrocodile,
+        Kraken,
+        KillerWhale,
+        EnergyMaker,
+        WavesPower,
+        Rainstorm
     }
 
     // Amaru
     public enum Amaru
     {
-
+        AmaruIncarnation,
+        SoulGuardian,
+        BodyGuardian,
+        AmaruAdept,
+        Colossus,
+        Cataclysm,
+        PowerOfResurrection,
+        SpiritualPortal
     }
 
 }

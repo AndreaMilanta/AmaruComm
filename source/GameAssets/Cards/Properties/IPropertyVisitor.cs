@@ -9,5 +9,6 @@ namespace AmaruCommon.GameAssets.Cards.Properties
     {
         int Visit(SimpleAttack attack);
         int Visit(AttackFromInnerEffect effect);
+        int Visit(ImperiaAttack attack);
     }
 }
