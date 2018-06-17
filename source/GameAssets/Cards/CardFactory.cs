@@ -1,6 +1,7 @@
 ﻿using System;
 
 using AmaruCommon.Constants;
+using AmaruCommon.GameAssets.Cards.Properties.Attacks;
 
 namespace AmaruCommon.GameAssets.Cards
 {
@@ -10,6 +11,8 @@ namespace AmaruCommon.GameAssets.Cards
         {
             switch (card)
             {
+                case Moraika.Imperia:
+                    return new CreatureCard("Imperia", 5, 5, new ImperiaAttack(1));
                 default:
                     throw new NotImplementedException();
             }
