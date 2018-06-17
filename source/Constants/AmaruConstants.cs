@@ -108,7 +108,7 @@ namespace AmaruCommon.Constants
         RoyalStarfish,
         BigClawSnappingShrimp,
         MuggerCrocodile,
-        Kraken,
+        ReaperKraken,
         KillerWhale,
         EnergyMaker,
         WavesPower,

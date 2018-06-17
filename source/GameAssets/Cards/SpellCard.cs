@@ -10,7 +10,7 @@ namespace AmaruCommon.GameAssets.Cards
     {
         public Effect Effect { get; private set; }
 
-        public SpellCard(int cost, string name, Effect effect, int id = AmaruConstants.AUTO_ID) : base(cost, name, id)
+        public SpellCard(string name, int cost, Effect effect = null, int id = AmaruConstants.AUTO_ID) : base(cost, name, id)
         {
             this.Effect = effect;
         }
