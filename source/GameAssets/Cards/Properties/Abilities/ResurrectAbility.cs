@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AmaruCommon.Constants;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,13 +8,12 @@ using System.Threading.Tasks;
 namespace AmaruCommon.GameAssets.Cards.Properties.Abilities
 {
     [Serializable]
-    public class GiveEPAbility : Ability
+    public class ResurrectAbility : Ability
     {
-        public int Ep { get; private set; }
-    
-        protected GiveEPAbility(int cost, int Ep) : base(cost)
+        public Place myZone { get; private set; }
+        protected ResurrectAbility(int cost, Place myZone) : base(cost)
         {
-            this.Ep = Ep;
+            this.myZone = myZone;
         }
 
         public override int Visit(IPropertyVisitor visitor)

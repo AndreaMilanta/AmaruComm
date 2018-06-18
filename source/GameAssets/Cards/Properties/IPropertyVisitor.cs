@@ -13,8 +13,18 @@ namespace AmaruCommon.GameAssets.Cards.Properties
         int Visit(GainHPAttack attack);
         int Visit(ImperiaAttack attack);
         int Visit(KrumAttack attack);
+        int Visit(SpendCPToDealDamageAbility spendCPToDealDamageAbility);
+        int Visit(ResurrectAbility resurrectAbility);
+        int Visit(SeribuAbility seribuAbility);
+        int Visit(KillIfPDAbility killIfPDAbility);
+        int Visit(SummonAbility summonAbility);
+        int Visit(AmaruIncarnationAbility amaruIncarnationAbility);
+        int Visit(DamageDependingOnCreatureNumberAbility damageDependingOnCreatureNumberAbility);
+        int Visit(BonusAttackDependingOnHealthAbility bonusAttackDependingOnHealthAbility);
+        int Visit(DamageWithPDAbility damageWithPDAbility);
         int Visit(PoisonAttack attack);
         int Visit(SalazarAttack attack);
+        int Visit(GainCPAbility gainCPAbility);
         int Visit(SeribuAttack attack);
         int Visit(SimpleAttack attack);
 

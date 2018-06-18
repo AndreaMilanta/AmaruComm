@@ -7,13 +7,14 @@ using System.Threading.Tasks;
 namespace AmaruCommon.GameAssets.Cards.Properties.Abilities
 {
     [Serializable]
-    public class GiveEPAbility : Ability
+    public class DamageWithPDAbility : Ability
     {
-        public int Ep { get; private set; }
-    
-        protected GiveEPAbility(int cost, int Ep) : base(cost)
+        public int numTarget { get; private set; }
+        public int numPD { get; private set; }
+        protected DamageWithPDAbility(int cost, int numTarget, int numPD) : base(cost)
         {
-            this.Ep = Ep;
+            this.numTarget = numTarget;
+            this.numPD = numPD;
         }
 
         public override int Visit(IPropertyVisitor visitor)

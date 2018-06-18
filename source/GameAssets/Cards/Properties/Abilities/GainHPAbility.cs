@@ -3,7 +3,7 @@
 namespace AmaruCommon.GameAssets.Cards.Properties.Abilities
 {
     [Serializable]
-    public abstract class GainHPAbility : Ability
+    public class GainHPAbility : Ability
     {
         public int Hp { get; private set; }
 
