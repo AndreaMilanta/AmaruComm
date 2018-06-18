@@ -11,5 +11,7 @@ namespace AmaruCommon.GameAssets.Cards.Properties.Abilities
         {
             this.Cost = cost;
         }
+
+        public abstract override int Visit(IPropertyVisitor visitor);
     }
 }

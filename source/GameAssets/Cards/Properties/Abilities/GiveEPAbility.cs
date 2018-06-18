@@ -3,17 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AmaruCommon.GameAssets.Cards.Properties.Effects;
 
-namespace AmaruCommon.GameAssets.Cards.Properties.Attacks
+namespace AmaruCommon.GameAssets.Cards.Properties.Abilities
 {
-    [Serializable]
-    public class ImperiaAttack : Attack
+    public class GiveEPAbility : Ability
     {
-
-        public ImperiaAttack(int cost) : base(cost)
+        protected GiveEPAbility(int cost) : base(cost)
         {
- 
         }
 
         public override int Visit(IPropertyVisitor visitor)

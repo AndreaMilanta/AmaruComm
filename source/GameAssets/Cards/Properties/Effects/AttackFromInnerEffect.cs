@@ -4,9 +4,9 @@ namespace AmaruCommon.GameAssets.Cards.Properties.Effects
 {
     public class AttackFromInnerEffect : Effect
     {
-        public override void Visit(IPropertyVisitor visitor)
+        public override int Visit(IPropertyVisitor visitor)
         {
-            visitor.Visit(this);
+            return visitor.Visit(this);
         }
     }
 }

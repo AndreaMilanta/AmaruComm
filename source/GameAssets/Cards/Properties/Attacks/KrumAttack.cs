@@ -12,9 +12,9 @@ namespace AmaruCommon.GameAssets.Cards.Properties.Attacks
         {
         }
 
-        public override void Visit(IPropertyVisitor visitor)
+        public override int Visit(IPropertyVisitor visitor)
         {
-            throw new System.NotImplementedException();
+            return visitor.Visit(this);
         }
     }
 }

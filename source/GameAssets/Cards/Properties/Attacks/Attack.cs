@@ -14,6 +14,6 @@ namespace AmaruCommon.GameAssets.Cards.Properties.Attacks
             this.Cost = cost;
         }
 
-        public abstract override void Visit(IPropertyVisitor visitor);
+        public abstract override int Visit(IPropertyVisitor visitor);
     }
 }

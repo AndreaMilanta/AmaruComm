@@ -20,9 +20,9 @@ namespace AmaruCommon.GameAssets.Cards.Properties.Attacks
             this.ToCreature = ToCreature;
         }
 
-        public override void Visit(IPropertyVisitor visitor)
+        public override int Visit(IPropertyVisitor visitor)
         {
-            visitor.Visit(this);
+            return visitor.Visit(this);
         }
     }
 }
