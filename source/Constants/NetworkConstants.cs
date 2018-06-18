@@ -13,7 +13,7 @@ namespace AmaruCommon.Constants
         public const int ServerPort = 5555;             // Main Server Port
 
         //Data Transfer
-        public const int BufferSize = 4096;             // Network Receiving Buffer size
+        public const int BufferSize = 4096*4;             // Network Receiving Buffer size
         
         //Failure Detection
         public const int MaxFailures = 1000;          // Maximum number of failures to consider a client alive
