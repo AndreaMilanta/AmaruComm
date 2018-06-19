@@ -10,5 +10,6 @@ namespace AmaruCommon.Actions
         void Visit(MoveCreatureAction action);
         void Visit(PlayACreatureFromHandAction action);
         void Visit(PlayASpellFromHandAction action);
+        void Visit(EndTurnAction endTurnAction);
     }
 }
