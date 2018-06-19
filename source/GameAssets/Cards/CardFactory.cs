@@ -24,7 +24,7 @@ namespace AmaruCommon.GameAssets.Cards
                 case Moraika.SacredOwl:
                     return new CreatureCard("Sacred Owl", 3, 2, new SimpleAttack(1, 3), shield: Shield.SHIELDUP);
                 case Moraika.ImperialTucan:
-                    return new CreatureCard("Imperial Tucan", 4, 4, new SimpleAttack(1, 3));
+                    return new CreatureCard("Imperial Toucan", 4, 4, new SimpleAttack(1, 3));
                 case Moraika.WindFury:
                     return new SpellCard("Wind Fury", 3);
                 case Moraika.HealthManagement:
