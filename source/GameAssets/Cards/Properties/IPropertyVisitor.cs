@@ -2,6 +2,7 @@
 
 using AmaruCommon.GameAssets.Cards.Properties.Attacks;
 using AmaruCommon.GameAssets.Cards.Properties.Abilities;
+using AmaruCommon.GameAssets.Cards.Properties.SpellAbilities;
 
 namespace AmaruCommon.GameAssets.Cards.Properties
 {
@@ -11,6 +12,7 @@ namespace AmaruCommon.GameAssets.Cards.Properties
         int Visit(GainCPAttack attack);
         int Visit(GainHPAttack attack);
         int Visit(ImperiaAttack attack);
+        int Visit(AttackFromInnerSpellAbility attackFromInnerSpellAbility);
         int Visit(KrumAttack attack);
         int Visit(PoisonAttack attack);
         int Visit(SalazarAttack attack);
