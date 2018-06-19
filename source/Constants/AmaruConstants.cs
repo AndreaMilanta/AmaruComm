@@ -38,7 +38,7 @@ namespace AmaruCommon.Constants
         HAND,
         INNER,
         OUTER,
-        CEMETERY
+        GRAVEYARD
     }
 
     public enum Property
