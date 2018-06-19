@@ -11,22 +11,13 @@ namespace AmaruCommon.GameAssets.Cards.Properties
     {
         // Attacks
         int Visit(GainCPAttack attack);
-        int Visit(HalveDamageIfPDEffect halveDamageIfPDEffect);
-        int Visit(CostLessForPDEffect costLessForPDEffect);
-        int Visit(GainHPForDamageEffect gainHPForDamageEffect);
-        int Visit(IfKillGainHPEffect ifKillGainHPEffect);
-        int Visit(GainAdditionalEPEffect gainAdditionalEPEffect);
-        int Visit(GainCPForCardPlayed gainCPForCardPlayed);
         int Visit(GainHPAttack attack);
-        int Visit(AttackBuffInSpecificZoneEffect attackBuffInSpecificZoneEffect);
         int Visit(ImperiaAttack attack);
         int Visit(KrumAttack attack);
         int Visit(PoisonAttack attack);
         int Visit(SalazarAttack attack);
         int Visit(SeribuAttack attack);
-        int Visit(DrawCardAndAttack drawCardAndAttack);
         int Visit(SimpleAttack attack);
-
 
         // Ability
         int Visit(GainHPAbility ability);
@@ -59,5 +50,15 @@ namespace AmaruCommon.GameAssets.Cards.Properties
         int Visit(DamagePDToAllCreaturesOfTargetPlayerSpellAbility damagePDToAllCreaturesOfTargetPlayerSpellAbility);
         int Visit(DealDamageDependingOnMAXHPSpeelAbility dealDamageDependingOnMAXHPSpeelAbility);
         int Visit(AttackEqualToHPSpellAbility attackEqualToHPSpellAbility);
+
+        //Creature Effect
+        int Visit(HalveDamageIfPDEffect halveDamageIfPDEffect);
+        int Visit(CostLessForPDEffect costLessForPDEffect);
+        int Visit(GainHPForDamageEffect gainHPForDamageEffect);
+        int Visit(IfKillGainHPEffect ifKillGainHPEffect);
+        int Visit(GainAdditionalEPEffect gainAdditionalEPEffect);
+        int Visit(GainCPForCardPlayedEffect gainCPForCardPlayed);
+        int Visit(DrawCardAndAttack drawCardAndAttack);
+        int Visit(AttackBuffInSpecificZoneEffect attackBuffInSpecificZoneEffect);
     }
 }

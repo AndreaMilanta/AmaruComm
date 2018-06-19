@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace AmaruCommon.GameAssets.Cards.Properties.CreatureEffects
 {
-    public class GainCPForCardPlayed : CreatureEffect
+    public class GainCPForCardPlayedEffect : CreatureEffect
     {
         public int buffNumber { get; private set; }
 
-        protected GainCPForCardPlayed(int buffNumber = 1)
+        protected GainCPForCardPlayedEffect(int buffNumber = 1)
         {
             this.buffNumber = buffNumber;
         }
