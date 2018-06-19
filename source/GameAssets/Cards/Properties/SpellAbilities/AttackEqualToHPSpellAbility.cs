@@ -4,17 +4,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace AmaruCommon.source.GameAssets.Cards.Properties.SpellAbilities
-{
+{ 
+
     [Serializable]
-    public abstract class SpellAbility : CardProperty
-        //per me questa classe non ha senso così
+    class AttackEqualToHPSpellAbility : SpellAbility
     {
-        public SpellAbility()
+
+        public AttackEqualToHPSpellAbility()
         {
         }
-
-        public abstract override int Visit(IPropertyVisitor visitor);
+        public override int Visit(IPropertyVisitor visitor)
+        {
+            return visitor.Visit(this);
+        }
     }
 }
