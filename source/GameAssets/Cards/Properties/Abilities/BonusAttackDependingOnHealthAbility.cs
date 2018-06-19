@@ -11,6 +11,8 @@ namespace AmaruCommon.GameAssets.Cards.Properties.Abilities
     [Serializable]
     public class BonusAttackDependingOnHealthAbility : Ability
     {
+        //unica abilità con dei target, siamo sicuri? 
+        //Altrimenti qui gestiamo il numero di target e altrove le carte...
         public LimitedList<CreatureCard> myTargets { get; private set; }
         public int myDivisor { get; private set; }
         protected BonusAttackDependingOnHealthAbility(int cost, int myDivisor, int myTargetsNumber) : base(cost)

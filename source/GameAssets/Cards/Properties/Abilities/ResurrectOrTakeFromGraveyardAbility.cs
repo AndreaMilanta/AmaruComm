@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 namespace AmaruCommon.GameAssets.Cards.Properties.Abilities
 {
     [Serializable]
-    public class ResurrectAbility : Ability
+    public class ResurrectOrTakeFromGraveyardAbility : Ability
     {
         public Place myZone { get; private set; }
-        protected ResurrectAbility(int cost, Place myZone) : base(cost)
+        protected ResurrectOrTakeFromGraveyardAbility(int cost, Place myZone) : base(cost)
         {
             this.myZone = myZone;
         }
