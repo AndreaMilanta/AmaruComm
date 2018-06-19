@@ -9,10 +9,12 @@ namespace AmaruCommon.Actions
     public class AttackPlayerAction : PlayerAction
     {
         public PlayerTarget Target { get; private set; }
+        public Property PlayedProperty { get; private set; }
 
-        public AttackPlayerAction(CharacterEnum caller, int playedCardId, Property playedProperty, PlayerTarget target) : base(caller, playedCardId, playedProperty)
+        public AttackPlayerAction(CharacterEnum caller, int playedCardId, Property playedProperty, PlayerTarget target) : base(caller, playedCardId)
         {
             this.Target = target;
+            this.PlayedProperty = PlayedProperty;
         }
 
         public override void Visit(IActionVisitor visitor)

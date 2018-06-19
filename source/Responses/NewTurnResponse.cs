@@ -1,6 +1,5 @@
 ﻿using System;
 
-using AmaruCommon.Responses;
 using AmaruCommon.GameAssets.Characters;
 
 namespace AmaruCommon.Responses

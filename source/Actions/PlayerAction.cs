@@ -10,13 +10,11 @@ namespace AmaruCommon.Actions
     {
         public CharacterEnum Caller { get; private set; }
         public int PlayedCardId { get; private set; }
-        public Property PlayedProperty { get; private set; }
 
-        public PlayerAction(CharacterEnum caller, int playedCardId, Property playedProperty)
+        public PlayerAction(CharacterEnum caller, int playedCardId)
         {
             this.Caller = caller;
             this.PlayedCardId = playedCardId;
-            this.PlayedProperty = PlayedProperty;
         }
 
         /// <summary>
