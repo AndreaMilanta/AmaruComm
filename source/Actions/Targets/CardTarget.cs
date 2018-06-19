@@ -5,6 +5,7 @@ using AmaruCommon.GameAssets.Cards;
 
 namespace AmaruCommon.Actions.Targets
 {
+    [Serializable]
     public class CardTarget : Target
     {
         public CharacterEnum Character { get; private set; }
