@@ -5,6 +5,7 @@ using ClientServer.Messages;
 
 namespace AmaruCommon.Communication.Messages
 {
+    [Serializable]
     public class PlayerKilledMessage : Message
     {
         public CharacterEnum DeadCharacter { get; private set; }

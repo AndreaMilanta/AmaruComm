@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using AmaruCommon.Constants;
 using AmaruCommon.GameAssets.Characters;
 using AmaruCommon.GameAssets.Cards;
-using AmaruCommon.GameAssets.Cards.Properties.Effects;
+using AmaruCommon.GameAssets.Cards.Properties.SpellAbilities;
+using System.Linq;
 
 namespace AmaruCommon.GameAssets.Player
 {
@@ -18,16 +19,14 @@ namespace AmaruCommon.GameAssets.Player
         public int HandSize { get; private set; }
         public LimitedList<CreatureCard> Inner { get; private set; }
         public LimitedList<CreatureCard> Outer { get; private set; }
-        public SpellCard PlayedSpell { get; private set; } = null;
+        public List<SpellCard> PlayedSpell { get; private set; } = null;
         public bool IsShieldUpProtected { get => Outer.Exists(o => o.Shield == Shield.SHIELDUP || o.Shield == Shield.BOTH); }
         public bool IsShieldMaidenProtected { get => Outer.Exists(o => o.Shield == Shield.SHIELDMAIDEN || o.Shield == Shield.BOTH); }
         public bool IsAlive { get => Health > 0; }
-        public bool InnerAttackAllowed { get => Outer.Exists(c => c.Effect is AttackFromInnerEffect) ||                         // Effect of card in outer
-                                                Inner.Exists(c => c.Effect is AttackFromInnerEffect) ||                         // Effect of card in inner
-                                                (PlayedSpell == null ? false : PlayedSpell.Effect is AttackFromInnerEffect); }  // Effect of played spell card
+        public bool InnerAttackAllowed { get { return (!PlayedSpell.Any() ? false : PlayedSpell.Exists(ps => ps.Effect is AttackFromInnerSpellAbility)); } }  // Effect of played spell card
         public bool IsImmune { get; set; } = false;
 
-        public EnemyInfo(CharacterEnum character, int health, int mana, int deckSize, int handSize, LimitedList<CreatureCard> inner, LimitedList<CreatureCard> outer, SpellCard playedSpell, bool immune)
+        public EnemyInfo(CharacterEnum character, int health, int mana, int deckSize, int handSize, LimitedList<CreatureCard> inner, LimitedList<CreatureCard> outer, List<SpellCard> playedSpell, bool immune)
         {
             this.Character = character;
             this.Health = health;

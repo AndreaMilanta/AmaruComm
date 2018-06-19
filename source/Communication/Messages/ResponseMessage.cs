@@ -5,6 +5,7 @@ using AmaruCommon.Responses;
 
 namespace AmaruCommon.Communication.Messages
 {
+    [Serializable]
     public class ResponseMessage : Message
     {
         public Response Response { get; private set; }

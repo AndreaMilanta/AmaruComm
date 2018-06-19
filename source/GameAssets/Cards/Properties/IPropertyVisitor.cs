@@ -2,7 +2,7 @@
 
 using AmaruCommon.GameAssets.Cards.Properties.Attacks;
 using AmaruCommon.GameAssets.Cards.Properties.Abilities;
-using AmaruCommon.source.GameAssets.Cards.Properties.SpellAbilities;
+using AmaruCommon.GameAssets.Cards.Properties.SpellAbilities;
 
 namespace AmaruCommon.GameAssets.Cards.Properties
 {
@@ -13,23 +13,12 @@ namespace AmaruCommon.GameAssets.Cards.Properties
         int Visit(GainHPAttack attack);
         int Visit(ImperiaAttack attack);
         int Visit(KrumAttack attack);
-        int Visit(DuplicatorSpellAbility duplicatorSpellAbility);
-        int Visit(AddEPAndDrawSpellAbility addEPAndDrawSpellAbility);
-        int Visit(PDDamageToCreatureSpellAbility pDDamageToCreatureSpellAbility);
-        int Visit(ResurrectSpecificCreatureSpellAbility resurrectSpecificCreatureSpellAbility);
-        int Visit(ResurrectOrReturnToHandSpellAbility resurrectOrReturnToHandSpellAbility);
-        int Visit(GiveHPSpellAbility giveHPSpellAbility);
-        int Visit(GainCpSpellAbility gainCpSpellAbility);
         int Visit(PoisonAttack attack);
-        int Visit(DealDamageDependingOnPDNumberSpellAbility dealDamageDependingOnPDNumberSpellAbility);
-        int Visit(DealDamageToEverythingSpellAbility dealDamageToEverythingSpellAbility);
-        int Visit(DealTotDamageToTotTargetsSpellAbility dealTotDamageToTotTargetsSpellAbility);
-        int Visit(DealDamageDependingOnMAXHPSpeelAbility dealDamageDependingOnMAXHPSpeelAbility);
         int Visit(SalazarAttack attack);
-        int Visit(DamagePDToAllCreaturesOfTargetPlayerSpellAbility damagePDToAllCreaturesOfTargetPlayerSpellAbility);
         int Visit(SeribuAttack attack);
+        int Visit(DrawCardAndAttack drawCardAndAttack);
         int Visit(SimpleAttack attack);
-        int Visit(AttackEqualToHPSpellAbility attackEqualToHPSpellAbility);
+
 
         // Ability
         int Visit(GainHPAbility ability);
@@ -46,5 +35,21 @@ namespace AmaruCommon.GameAssets.Cards.Properties
         int Visit(DamageWithPDAbility damageWithPDAbility);
         int Visit(GiveEPAbility ability);
         int Visit(GainCPAbility gainCPAbility);
+
+        // SpellAbility
+        int Visit(DuplicatorSpellAbility duplicatorSpellAbility);
+        int Visit(AddEPAndDrawSpellAbility addEPAndDrawSpellAbility);
+        int Visit(PDDamageToCreatureSpellAbility pDDamageToCreatureSpellAbility);
+        int Visit(ResurrectSpecificCreatureSpellAbility resurrectSpecificCreatureSpellAbility);
+        int Visit(ResurrectOrReturnToHandSpellAbility resurrectOrReturnToHandSpellAbility);
+        int Visit(GiveHPSpellAbility giveHPSpellAbility);
+        int Visit(GainCpSpellAbility gainCpSpellAbility);
+        int Visit(AttackFromInnerSpellAbility attackFromInnerSpellAbility);
+        int Visit(DealDamageDependingOnPDNumberSpellAbility dealDamageDependingOnPDNumberSpellAbility);
+        int Visit(DealDamageToEverythingSpellAbility dealDamageToEverythingSpellAbility);
+        int Visit(DealTotDamageToTotTargetsSpellAbility dealTotDamageToTotTargetsSpellAbility);
+        int Visit(DamagePDToAllCreaturesOfTargetPlayerSpellAbility damagePDToAllCreaturesOfTargetPlayerSpellAbility);
+        int Visit(DealDamageDependingOnMAXHPSpeelAbility dealDamageDependingOnMAXHPSpeelAbility);
+        int Visit(AttackEqualToHPSpellAbility attackEqualToHPSpellAbility);
     }
 }

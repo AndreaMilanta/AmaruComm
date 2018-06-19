@@ -4,14 +4,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-namespace AmaruCommon.source.GameAssets.Cards.Properties.SpellAbilities
+namespace AmaruCommon.GameAssets.Cards.Properties.SpellAbilities
 {
 
     [Serializable]
-    class PDDamageToCreatureSpellAbility : SpellAbility
+    public class PDDamageToCreatureSpellAbility : SpellAbility
     {
         public int PDDamage { get; private set; }
-        public PDDamageToCreatureSpellAbility(int PDDamage = 3)
+        protected PDDamageToCreatureSpellAbility(int PDDamage = 3)
         {
             this.PDDamage = PDDamage;
         }

@@ -4,14 +4,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-namespace AmaruCommon.source.GameAssets.Cards.Properties.SpellAbilities
+namespace AmaruCommon.GameAssets.Cards.Properties.SpellAbilities
 {
 
     [Serializable]
-    class DuplicatorSpellAbility : SpellAbility
+    public class DuplicatorSpellAbility : SpellAbility
     {
 
-        public DuplicatorSpellAbility()
+        protected DuplicatorSpellAbility()
         {
         }
         public override int Visit(IPropertyVisitor visitor)

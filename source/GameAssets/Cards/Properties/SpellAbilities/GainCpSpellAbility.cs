@@ -4,14 +4,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-namespace AmaruCommon.source.GameAssets.Cards.Properties.SpellAbilities
+namespace AmaruCommon.GameAssets.Cards.Properties.SpellAbilities
 {
 
     [Serializable]
-    class GainCpSpellAbility : SpellAbility
+    public class GainCpSpellAbility : SpellAbility
     {
         public int numCP { get; private set; }
-        public GainCpSpellAbility (int numCP = 4)
+        protected GainCpSpellAbility (int numCP = 4)
         {
             this.numCP = numCP;
         }

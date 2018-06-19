@@ -4,14 +4,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-namespace AmaruCommon.source.GameAssets.Cards.Properties.SpellAbilities
+namespace AmaruCommon.GameAssets.Cards.Properties.SpellAbilities
 {
 
     [Serializable]
-    class GiveHPSpellAbility : SpellAbility
+    public class GiveHPSpellAbility : SpellAbility
     {
         public int numHP { get; private set; }
-        public GiveHPSpellAbility(int numHP = 4)
+        protected GiveHPSpellAbility(int numHP = 4)
         {
             this.numHP = numHP;
         }

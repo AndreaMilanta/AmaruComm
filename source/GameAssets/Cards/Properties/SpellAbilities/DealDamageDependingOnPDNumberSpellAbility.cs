@@ -7,13 +7,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-namespace AmaruCommon.source.GameAssets.Cards.Properties.SpellAbilities
+namespace AmaruCommon.GameAssets.Cards.Properties.SpellAbilities
 {
 
     [Serializable]
-    class DealDamageDependingOnPDNumberSpellAbility : SpellAbility
+    public class DealDamageDependingOnPDNumberSpellAbility : SpellAbility
     {
-        public DealDamageDependingOnPDNumberSpellAbility()
+        protected DealDamageDependingOnPDNumberSpellAbility()
         {
         }
         public override int Visit(IPropertyVisitor visitor)

@@ -5,15 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using AmaruCommon.GameAssets.Cards.Properties;
 
-namespace AmaruCommon.source.GameAssets.Cards.Properties.SpellAbilities
+namespace AmaruCommon.GameAssets.Cards.Properties.SpellAbilities
 {
     [Serializable]
-    class DealTotDamageToTotTargetsSpellAbility : SpellAbility
+    public class DealTotDamageToTotTargetsSpellAbility : SpellAbility
     {
         public int numTarget { get; private set; }
         public int DamageToDeal { get; private set; }
 
-        public DealTotDamageToTotTargetsSpellAbility(int numTarget = 3, int damageToDeal = 3)
+        protected DealTotDamageToTotTargetsSpellAbility(int numTarget = 3, int damageToDeal = 3)
         {
             this.numTarget = numTarget;
             this.DamageToDeal = damageToDeal;

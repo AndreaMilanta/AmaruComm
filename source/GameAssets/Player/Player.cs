@@ -8,7 +8,8 @@ using AmaruCommon.GameAssets.Cards;
 using AmaruCommon.GameAssets.Characters;
 using AmaruCommon.GameAssets.Player;
 using AmaruCommon.GameAssets.Cards.Properties.Abilities;
-using AmaruCommon.GameAssets.Cards.Properties.Effects;
+using AmaruCommon.GameAssets.Cards.Properties.SpellAbilities;
+using System.Linq;
 
 namespace AmaruCommon.GameAssets.Player
 {
@@ -20,9 +21,7 @@ namespace AmaruCommon.GameAssets.Player
         public bool IsShieldUpProtected { get => Outer.Exists(o => o.Shield == Shield.SHIELDUP || o.Shield == Shield.BOTH); }
         public bool IsShieldMaidenProtected { get => Outer.Exists(o => o.Shield == Shield.SHIELDMAIDEN || o.Shield == Shield.BOTH); }
         public bool IsAlive { get => Health > 0; }
-        public bool InnerAttackAllowed { get => Outer.Exists(c => c.Effect is AttackFromInnerEffect) ||                         // Effect of card in outer
-                                                Inner.Exists(c => c.Effect is AttackFromInnerEffect) ||                         // Effect of card in inner
-                                                (PlayedSpell == null ? false : PlayedSpell.Effect is AttackFromInnerEffect); }  // Effect of played spell card
+        public bool InnerAttackAllowed { get { return (!PlayedSpell.Any() ? false : PlayedSpell.Exists(ps => ps.Effect is AttackFromInnerSpellAbility)); } }  // Effect of played spell card
         public bool IsImmune { get; set; } = false;
         public bool HasChanged { get; set; } = false;           // Wheter player has changed or not
 
@@ -36,7 +35,7 @@ namespace AmaruCommon.GameAssets.Player
         public LimitedList<CreatureCard> Inner { get; private set;} = new LimitedList<CreatureCard>(AmaruConstants.INNER_MAX_SIZE);
         public LimitedList<CreatureCard> Outer { get; private set; } = new LimitedList<CreatureCard>(AmaruConstants.OUTER_MAX_SIZE);
         public List<Card> Graveyard { get; private set; } = new List<Card>();
-        public SpellCard PlayedSpell { get; private set; } = null;
+        public List<SpellCard> PlayedSpell { get; private set; } = null;
         private ReadOnlyDictionary<Place, IEnumerable<Card>> _cardDict; 
 
         // Communication

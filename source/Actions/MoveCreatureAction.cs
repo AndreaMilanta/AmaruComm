@@ -8,6 +8,7 @@ using AmaruCommon.GameAssets.Characters;
 
 namespace AmaruCommon.Actions
 {
+    [Serializable]
     public class MoveCreatureAction : PlayerAction
     {
         public Place Place { get; private set; }

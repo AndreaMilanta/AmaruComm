@@ -1,6 +1,5 @@
 ﻿using System;
 
-using AmaruCommon.GameAssets.Cards.Properties.Effects;
 
 namespace AmaruCommon.GameAssets.Cards.Properties.Attacks
 {
