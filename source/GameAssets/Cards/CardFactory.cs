@@ -74,7 +74,7 @@ namespace AmaruCommon.GameAssets.Cards
                 case Leon.ShieldedBear:
                     return new CreatureCard("Shielded Bear", 1, 2, new SimpleAttack(1, 2), shield:Shield.SHIELDMAIDEN);
                 case Leon.PatriarchBull:
-                    return new CreatureCard("Patriatch Bull", 2, 4, new SimpleAttack(1, 3), shield:Shield.SHIELDUP);
+                    return new CreatureCard("Patriarch Bull", 2, 4, new SimpleAttack(1, 3), shield:Shield.SHIELDUP);
                 case Leon.WildHorse:
                     return new CreatureCard("Wild Horse", 3, 3, new SimpleAttack(1, 3));
                 case Leon.BloodborneRhino:

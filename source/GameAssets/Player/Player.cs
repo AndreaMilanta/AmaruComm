@@ -60,7 +60,12 @@ namespace AmaruCommon.GameAssets.Player
 
         public Card Draw()
         {
-            if (Deck.Count == 0 || Hand.Count == AmaruConstants.HAND_MAX_SIZE)
+            if (Deck.Count == 0)
+            {
+                Health--;
+                return null;
+            }
+            if (Hand.Count == AmaruConstants.HAND_MAX_SIZE)
                 return null;
             Card drawnCard = Deck.Pop();
             Hand.Add(drawnCard);
