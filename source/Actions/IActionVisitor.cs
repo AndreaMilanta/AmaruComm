@@ -8,5 +8,7 @@ namespace AmaruCommon.Actions
     {
         void Visit(AttackPlayerAction action);
         void Visit(MoveCreatureAction action);
+        void Visit(PlayACreatureFromHandAction action);
+        void Visit(PlayASpellFromHandAction action);
     }
 }
