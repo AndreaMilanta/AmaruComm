@@ -13,7 +13,7 @@ namespace AmaruCommon.GameAssets.Cards.Properties.SpellAbilities
         public int numTarget { get; private set; }
         public int DamageToDeal { get; private set; }
 
-        protected DealTotDamageToTotTargetsSpellAbility(int numTarget = 3, int damageToDeal = 3)
+        protected DealTotDamageToTotTargetsSpellAbility(int numTarget = 3, int damageToDeal = 3) : base(true)
         {
             this.numTarget = numTarget;
             this.DamageToDeal = damageToDeal;

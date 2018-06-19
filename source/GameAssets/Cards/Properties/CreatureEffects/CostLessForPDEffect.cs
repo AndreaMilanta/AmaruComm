@@ -1,18 +1,18 @@
-﻿using AmaruCommon.GameAssets.Cards.Properties;
+﻿using AmaruCommon.Constants;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-namespace AmaruCommon.GameAssets.Cards.Properties.SpellAbilities
-{
 
-    [Serializable]
-    public class DuplicatorSpellAbility : SpellAbility
+namespace AmaruCommon.GameAssets.Cards.Properties.CreatureEffects
+{
+    public class CostLessForPDEffect : CreatureEffect
     {
 
-        protected DuplicatorSpellAbility() : base(true)
+        protected CostLessForPDEffect()
         {
+        
         }
         public override int Visit(IPropertyVisitor visitor)
         {

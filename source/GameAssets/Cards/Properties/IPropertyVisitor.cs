@@ -3,6 +3,7 @@
 using AmaruCommon.GameAssets.Cards.Properties.Attacks;
 using AmaruCommon.GameAssets.Cards.Properties.Abilities;
 using AmaruCommon.GameAssets.Cards.Properties.SpellAbilities;
+using AmaruCommon.GameAssets.Cards.Properties.CreatureEffects;
 
 namespace AmaruCommon.GameAssets.Cards.Properties
 {
@@ -10,7 +11,14 @@ namespace AmaruCommon.GameAssets.Cards.Properties
     {
         // Attacks
         int Visit(GainCPAttack attack);
+        int Visit(HalveDamageIfPDEffect halveDamageIfPDEffect);
+        int Visit(CostLessForPDEffect costLessForPDEffect);
+        int Visit(GainHPForDamageEffect gainHPForDamageEffect);
+        int Visit(IfKillGainHPEffect ifKillGainHPEffect);
+        int Visit(GainAdditionalEPEffect gainAdditionalEPEffect);
+        int Visit(GainCPForCardPlayed gainCPForCardPlayed);
         int Visit(GainHPAttack attack);
+        int Visit(AttackBuffInSpecificZoneEffect attackBuffInSpecificZoneEffect);
         int Visit(ImperiaAttack attack);
         int Visit(KrumAttack attack);
         int Visit(PoisonAttack attack);

@@ -13,7 +13,7 @@ namespace AmaruCommon.GameAssets.Cards.Properties.SpellAbilities
     [Serializable]
     public class DealDamageDependingOnPDNumberSpellAbility : SpellAbility
     {
-        protected DealDamageDependingOnPDNumberSpellAbility()
+        protected DealDamageDependingOnPDNumberSpellAbility() : base(true)
         {
         }
         public override int Visit(IPropertyVisitor visitor)

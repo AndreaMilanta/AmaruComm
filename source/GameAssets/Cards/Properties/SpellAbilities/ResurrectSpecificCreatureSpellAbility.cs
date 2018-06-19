@@ -14,7 +14,7 @@ namespace AmaruCommon.GameAssets.Cards.Properties.SpellAbilities
     {
         public Place myZone { get; private set; }
         public CreatureCard myTarget { get; private set; }
-        protected ResurrectSpecificCreatureSpellAbility(Place myZone, CreatureCard myTarget)
+        protected ResurrectSpecificCreatureSpellAbility(Place myZone, CreatureCard myTarget) : base(true)
         {
             this.myTarget = myTarget;
             this.myZone = myZone;

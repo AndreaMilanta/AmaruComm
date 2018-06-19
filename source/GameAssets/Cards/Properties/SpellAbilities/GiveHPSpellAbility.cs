@@ -11,7 +11,7 @@ namespace AmaruCommon.GameAssets.Cards.Properties.SpellAbilities
     public class GiveHPSpellAbility : SpellAbility
     {
         public int numHP { get; private set; }
-        protected GiveHPSpellAbility(int numHP = 4)
+        protected GiveHPSpellAbility(int numHP = 4) : base(true)
         {
             this.numHP = numHP;
         }

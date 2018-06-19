@@ -11,7 +11,7 @@ namespace AmaruCommon.GameAssets.Cards.Properties.SpellAbilities
     public class DealDamageToEverythingSpellAbility : SpellAbility
     {
         public int numDamage { get; private set; }
-        protected DealDamageToEverythingSpellAbility(int numDamage = 3)
+        protected DealDamageToEverythingSpellAbility(int numDamage = 3) : base(true)
         {
             this.numDamage= numDamage;
         }

@@ -11,7 +11,7 @@ namespace AmaruCommon.GameAssets.Cards.Properties.SpellAbilities
     public class GainCpSpellAbility : SpellAbility
     {
         public int numCP { get; private set; }
-        protected GainCpSpellAbility (int numCP = 4)
+        protected GainCpSpellAbility (int numCP = 4) : base(true)
         {
             this.numCP = numCP;
         }

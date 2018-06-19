@@ -10,8 +10,10 @@ namespace AmaruCommon.GameAssets.Cards.Properties.SpellAbilities
     [Serializable]
     public abstract class SpellAbility : CardProperty
     {
-        protected SpellAbility()
+        public bool Immediate { get; private set; }
+        protected SpellAbility(bool immediate)
         {
+            this.Immediate = immediate;
         }
 
         public abstract override int Visit(IPropertyVisitor visitor);
