@@ -2,7 +2,8 @@
 
 namespace AmaruCommon.Responses
 {
-    public class Response
+    public abstract class Response
     {
+        public abstract void Visit(IResponseVisitor visitor);
     }
 }

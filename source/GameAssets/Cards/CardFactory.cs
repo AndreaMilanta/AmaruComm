@@ -110,7 +110,7 @@ namespace AmaruCommon.GameAssets.Cards
                 case Yaku.ReaperKraken:
                     return new CreatureCard("Reaper Kraken", 5, 4, new SimpleAttack(1, 3), shield: Shield.SHIELDMAIDEN);
                 case Yaku.KillerWhale:
-                    return new CreatureCard("Killer Whale", 6, 8, new SimpleAttack(2, 5), shield: Shield.BOTH);
+                    return new CreatureCard("Giant Whale", 6, 8, new SimpleAttack(2, 5), shield: Shield.BOTH);
                 case Yaku.EnergyMaker:
                     return new SpellCard("Energy Maker", 2);
                 case Yaku.WavesPower:
