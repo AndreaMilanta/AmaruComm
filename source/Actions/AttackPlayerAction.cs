@@ -6,6 +6,7 @@ using AmaruCommon.Actions.Targets;
 
 namespace AmaruCommon.Actions
 {
+    [Serializable]
     public class AttackPlayerAction : PlayerAction
     {
         public PlayerTarget Target { get; private set; }
