@@ -54,19 +54,25 @@ namespace AmaruCommon.GameAssets.Player
                     {Place.HAND, Hand},
                     {Place.INNER, Inner},
                     {Place.OUTER, Outer},
-                    {Place.CEMETERY, Graveyard},
+                    {Place.GRAVEYARD, Graveyard},
                 });
         }
 
-        public void Draw()
+        public Card Draw()
         {
-            Hand.Add(Deck.Pop());
+            if (Deck.Count == 0 || Hand.Count == AmaruConstants.HAND_MAX_SIZE)
+                return null;
+            Card drawnCard = Deck.Pop();
+            Hand.Add(drawnCard);
+            return drawnCard;
         }
 
-        public void Draw(int amount)
+        public List<Card> Draw(int amount)
         {
+            List<Card> drawnCards = new List<Card>();
             for (int i = 0; i < amount; i++)
-                this.Draw();
+                drawnCards.Add(this.Draw());
+            return drawnCards;
         }
 
         /// <summary>
