@@ -4,6 +4,7 @@ using AmaruCommon.GameAssets.Characters;
 
 namespace AmaruCommon.Responses
 {
+    [Serializable]
     public class NewTurnResponse : Response
     {
         public CharacterEnum ActivePlayer { get; private set; }
