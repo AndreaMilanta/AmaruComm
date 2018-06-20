@@ -8,10 +8,10 @@ namespace AmaruCommon.Responses
     [Serializable]
     public class PlayACreatureResponse : Response
     {
-        public CharacterEnum Caller { get; set; }
-        public CreatureCard Creature { get; set; }
-        public Place Place { get; set; }
-        public int TablePos { get; set; }
+        public CharacterEnum Caller { get; private set; }
+        public CreatureCard Creature { get; private set; }
+        public Place Place { get; private set; }
+        public int TablePos { get; private set; }
 
         public PlayACreatureResponse(CharacterEnum caller, CreatureCard creature, Place place, int tablePos)
         {
