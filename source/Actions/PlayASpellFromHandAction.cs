@@ -3,15 +3,16 @@
 using AmaruCommon.Constants;
 using AmaruCommon.GameAssets.Characters;
 using AmaruCommon.Actions.Targets;
+using System.Collections.Generic;
 
 namespace AmaruCommon.Actions
 {
     [Serializable]
     public class PlayASpellFromHandAction : PlayerAction
     {
-        public int Targets { get; private set; }
+        public List<Target> Targets { get; private set; }
 
-        public PlayASpellFromHandAction(CharacterEnum caller, int playedCardId, int targets) : base(caller, playedCardId)
+        public PlayASpellFromHandAction(CharacterEnum caller, int playedCardId, List<Target> targets) : base(caller, playedCardId)
         {
             this.Targets = targets;
         }

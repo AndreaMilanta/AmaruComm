@@ -10,6 +10,7 @@ using AmaruCommon.GameAssets.Player;
 using AmaruCommon.GameAssets.Cards.Properties.Abilities;
 using AmaruCommon.GameAssets.Cards.Properties.SpellAbilities;
 using System.Linq;
+using AmaruCommon.Actions.Targets;
 
 namespace AmaruCommon.GameAssets.Player
 {
@@ -91,6 +92,66 @@ namespace AmaruCommon.GameAssets.Player
             if (place == Place.DECK)
                 throw new InvalidSearchLocation();
             return ((List<Card>)_cardDict[place]).Find(c => c.Id == id);
+        }
+
+        public CreatureCard PlayACreatureFromHand(int id, Place z)
+        {
+            // Debug.Log(ManaLeft);
+            // Debug.Log(playedCard.CurrentManaCost);
+            CreatureCard creature = (CreatureCard) GetCardFromId(id, Place.HAND);
+            Mana -= creature.Cost;
+            // Debug.Log("Mana Left after played a creature: " + ManaLeft);
+            // create a new creature object and add it to Table
+
+            if (z == Place.INNER)
+                Inner.Add(creature);
+            else
+                Outer.Add(creature);
+            
+            //new PlayACreatureCommand(playedCard, this, z, tablePos, newCreature.UniqueCreatureID).AddToQueue();
+            // cause battlecry Effect
+            //if (newCreature.effect != null)
+            //    newCreature.effect.WhenACreatureIsPlayed();
+            // remove this card from hand
+            Hand.Remove(creature);
+
+            return creature;
+        }
+
+        public SpellCard PlayASpellFromHand(int id, List<Target> targets)
+        {
+            SpellCard spell = (SpellCard)GetCardFromId(id, Place.HAND);
+            Mana -= spell.Cost;
+            // cause effect instantly:
+            /*if ((spell.Effect != null)
+                spell.Effect.Visit(playedCard.ca.specialSpellAmount, target);
+            else {
+                Debug.LogWarning("No effect found on card " + playedCard.ca.name);
+            }
+            */
+            // no matter what happens, move this card to PlayACardSpot
+           
+            // remove this card from hand
+            Hand.Remove(spell);
+            // check if this is a creature or a spell
+            return spell;
+        }
+
+        public CreatureCard MoveACreatureFromPlace(int id, Place z)
+        {
+            CreatureCard creature;
+            if (z == Place.INNER) {
+                creature = (CreatureCard) GetCardFromId(id, Place.OUTER);
+                Inner.Add(creature);
+                Outer.Remove(creature);
+            }
+            else {
+                creature = (CreatureCard)GetCardFromId(id, Place.INNER);
+                Outer.Add(creature);
+                Inner.Remove(creature);
+            }
+
+            return creature;
         }
 
         public void ResetManaCount()

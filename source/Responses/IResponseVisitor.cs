@@ -6,5 +6,8 @@ namespace AmaruCommon.Responses
     {
         void Visit(NewTurnResponse response);
         void Visit(MainTurnResponse mainTurnResponse);
+        void Visit(PlayACreatureResponse playACreatureResponse);
+        void Visit(PlayASpellResponse playASpellResponse);
+        void Visit(MoveCreatureResponse moveCreatureResponse);
     }
 }
