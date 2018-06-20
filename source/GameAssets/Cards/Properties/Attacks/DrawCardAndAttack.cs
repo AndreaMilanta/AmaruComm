@@ -6,11 +6,11 @@ using AmaruCommon.GameAssets.Cards.Properties.Attacks;
 namespace AmaruCommon.GameAssets.Cards.Properties.Attacks
 {
     [Serializable]
-    public class DrawCardAndAttack : Attack
+    public class DrawCardAndAttack : SimpleAttack
     {
         public Target CreatureOrPlayer { get; private set; }
 
-        public DrawCardAndAttack(int cost,Target kindOfTarget) : base(cost)
+        public DrawCardAndAttack(int cost, int power, Target kindOfTarget) : base(cost, power)
         {
             this.CreatureOrPlayer = kindOfTarget;
         }

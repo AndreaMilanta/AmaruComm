@@ -6,11 +6,11 @@ using AmaruCommon.GameAssets.Cards.Properties.Attacks;
 namespace AmaruCommon.GameAssets.Cards.Properties.Attacks
 {
     [Serializable]
-    public class GainCPAttack : Attack
+    public class GainCPAttack : SimpleAttack
     {
         public int Cp { get; private set; }
 
-        public GainCPAttack(int cost, int cp) : base(cost)
+        public GainCPAttack(int cost, int power, int cp) : base(cost, power)
         {
             this.Cp = cp;
         }

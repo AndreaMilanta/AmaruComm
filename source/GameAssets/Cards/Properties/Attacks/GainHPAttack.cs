@@ -7,14 +7,12 @@ using System.Threading.Tasks;
 namespace AmaruCommon.GameAssets.Cards.Properties.Attacks
 {
     [Serializable]
-    public class GainHPAttack : Attack
+    public class GainHPAttack : SimpleAttack
     {
-        public int Power { get; private set; }
         public int Hp { get; private set; }
         public bool ToCreature { get; private set; }
-        public GainHPAttack(int cost, int power, int hp, bool toCreature) : base(cost)
+        public GainHPAttack(int cost, int power, int hp, bool toCreature) : base(cost, power)
         {
-            this.Power = power;
             this.Hp = hp;
             this.ToCreature = ToCreature;
         }

@@ -7,13 +7,11 @@ using System.Threading.Tasks;
 namespace AmaruCommon.GameAssets.Cards.Properties.Attacks
 {
     [Serializable]
-    public class PoisonAttack : Attack
+    public class PoisonAttack : SimpleAttack
     {
-        public int Power { get; private set; }
 
-        public PoisonAttack(int cost, int power) : base(cost)
+        public PoisonAttack(int cost, int power) : base(cost, power)
         {
-            this.Power = power;
         }
 
         public override int Visit(PropertyVisitor visitor)
