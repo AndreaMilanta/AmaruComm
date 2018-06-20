@@ -30,6 +30,7 @@ namespace AmaruCommon.Constants
 
         // Mana constants
         public const int MAX_MANA = 15;             // 
+        public const int MANA_TURN_FACTOR = 2;      // TODO: Change back to 1
     }
 
     // Useful Enums
