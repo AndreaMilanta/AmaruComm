@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 using ClientServer.Messages;
 using AmaruCommon.GameAssets.Characters;
-using AmaruCommon.GameAssets.Player;
+using AmaruCommon.GameAssets.Players;
 
 namespace AmaruCommon.Communication.Messages
 {

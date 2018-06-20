@@ -6,7 +6,7 @@ using AmaruCommon.GameAssets.Cards;
 using AmaruCommon.GameAssets.Cards.Properties.SpellAbilities;
 using AmaruCommon.GameAssets.Characters;
 
-namespace AmaruCommon.GameAssets.Player
+namespace AmaruCommon.GameAssets.Players
 {
     [Serializable]
     public class OwnInfo

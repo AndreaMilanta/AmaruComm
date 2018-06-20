@@ -18,7 +18,7 @@ namespace AmaruCommon.GameAssets.Cards.Properties.SpellAbilities
             this.EpNumber = EpNumber;
             this.CardToDraw = CardToDraw;
         }
-        public override int Visit(IPropertyVisitor visitor)
+        public override int Visit(PropertyVisitor visitor)
         {
             return visitor.Visit(this);
         }

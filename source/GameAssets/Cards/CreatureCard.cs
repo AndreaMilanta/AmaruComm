@@ -3,6 +3,8 @@
 using AmaruCommon.Constants;
 using AmaruCommon.GameAssets.Cards.Properties.Attacks;
 using AmaruCommon.GameAssets.Cards.Properties.Abilities;
+using AmaruCommon.GameAssets.Cards.Properties;
+using AmaruCommon.GameAssets.Players;
 
 namespace AmaruCommon.GameAssets.Cards
 {
@@ -21,6 +23,17 @@ namespace AmaruCommon.GameAssets.Cards
             this.Attack = attack;
             this.Ability = ability;
             this.Shield = shield;
+        }
+
+        public override void Visit(PropertyVisitor visitor, Player player, CardProperty property = null)
+        {
+            if (property != null)
+                base.Visit(visitor, player, property);
+            else
+            {
+                base.Visit(visitor, player, Attack);
+                base.Visit(visitor, player, Ability);
+            }
         }
     }
 }

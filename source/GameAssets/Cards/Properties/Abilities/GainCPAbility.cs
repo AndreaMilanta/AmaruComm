@@ -16,7 +16,7 @@ namespace AmaruCommon.GameAssets.Cards.Properties.Abilities
             this.cp = cp;
         }
 
-        public override int Visit(IPropertyVisitor visitor)
+        public override int Visit(PropertyVisitor visitor)
         {
             return visitor.Visit(this);
         }

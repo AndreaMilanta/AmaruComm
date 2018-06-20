@@ -17,7 +17,7 @@ namespace AmaruCommon.GameAssets.Cards.Properties.CreatureEffects
             this.buffNumber = buffNumber;
             this.myZone = myZone;
         }
-        public override int Visit(IPropertyVisitor visitor)
+        public override int Visit(PropertyVisitor visitor)
         {
             return visitor.Visit(this);
         }
