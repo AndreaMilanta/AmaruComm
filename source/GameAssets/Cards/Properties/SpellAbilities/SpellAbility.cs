@@ -16,6 +16,6 @@ namespace AmaruCommon.GameAssets.Cards.Properties.SpellAbilities
             this.Immediate = immediate;
         }
 
-        public abstract override int Visit(IPropertyVisitor visitor);
+        public abstract override int Visit(PropertyVisitor visitor);
     }
 }

@@ -3,7 +3,7 @@
 using AmaruCommon.Constants;
 using AmaruCommon.GameAssets.Characters;
 
-namespace AmaruCommon.GameAssets.Player
+namespace AmaruCommon.GameAssets.Players
 {
     public class AmaruPlayer : Player
     {

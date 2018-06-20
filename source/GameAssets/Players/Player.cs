@@ -6,17 +6,18 @@ using AmaruCommon.Exceptions;
 using AmaruCommon.Constants;
 using AmaruCommon.GameAssets.Cards;
 using AmaruCommon.GameAssets.Characters;
-using AmaruCommon.GameAssets.Player;
+using AmaruCommon.GameAssets.Players;
 using AmaruCommon.GameAssets.Cards.Properties.Abilities;
 using AmaruCommon.GameAssets.Cards.Properties.SpellAbilities;
 using System.Linq;
 
-namespace AmaruCommon.GameAssets.Player
+namespace AmaruCommon.GameAssets.Players
 {
     public class Player
     {
+        private int _mana = 0;
         // Properties
-        public int Mana { get; set ; } = 0;
+        public int Mana { get => _mana; set => _mana = value > AmaruConstants.MAX_MANA ? AmaruConstants.MAX_MANA : value; }
         public int Health { get; set; } = AmaruConstants.INITIAL_PLAYER_HEALTH;
         public bool IsShieldUpProtected { get => Outer.Exists(o => o.Shield == Shield.SHIELDUP || o.Shield == Shield.BOTH); }
         public bool IsShieldMaidenProtected { get => Outer.Exists(o => o.Shield == Shield.SHIELDMAIDEN || o.Shield == Shield.BOTH); }

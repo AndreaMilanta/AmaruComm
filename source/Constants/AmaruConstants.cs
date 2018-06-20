@@ -27,6 +27,9 @@ namespace AmaruCommon.Constants
 
         // Cards constants
         internal const int AUTO_ID = -1;            // Value used to set card id automatically !! MUST BE < 0 !!
+
+        // Mana constants
+        public const int MAX_MANA = 15;             // 
     }
 
     // Useful Enums

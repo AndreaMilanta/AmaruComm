@@ -14,7 +14,7 @@ namespace AmaruCommon.GameAssets.Cards.Properties.SpellAbilities
         protected DealDamageDependingOnPDNumberSpellAbility() : base(true)
         {
         }
-        public override int Visit(IPropertyVisitor visitor)
+        public override int Visit(PropertyVisitor visitor)
         {
             return visitor.Visit(this);
         }

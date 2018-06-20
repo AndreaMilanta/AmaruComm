@@ -13,7 +13,7 @@ namespace AmaruCommon.GameAssets.Cards.Properties.CreatureEffects
         protected GainHPForDamageEffect()
         {
         }
-        public override int Visit(IPropertyVisitor visitor)
+        public override int Visit(PropertyVisitor visitor)
         {
             return visitor.Visit(this);
         }

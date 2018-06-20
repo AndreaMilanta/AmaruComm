@@ -7,7 +7,7 @@ using AmaruCommon.GameAssets.Cards;
 using AmaruCommon.GameAssets.Cards.Properties.SpellAbilities;
 using System.Linq;
 
-namespace AmaruCommon.GameAssets.Player
+namespace AmaruCommon.GameAssets.Players
 {
     [Serializable]
     public class EnemyInfo

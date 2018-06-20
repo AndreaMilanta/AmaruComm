@@ -12,6 +12,6 @@ namespace AmaruCommon.GameAssets.Cards.Properties.CreatureEffects
         {
 
         }
-        public abstract override int Visit(IPropertyVisitor visitor);
+        public abstract override int Visit(PropertyVisitor visitor);
     }
 }

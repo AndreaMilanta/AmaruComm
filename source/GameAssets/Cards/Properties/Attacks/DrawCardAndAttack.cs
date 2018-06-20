@@ -15,7 +15,7 @@ namespace AmaruCommon.GameAssets.Cards.Properties.Attacks
             this.CreatureOrPlayer = kindOfTarget;
         }
 
-        public override int Visit(IPropertyVisitor visitor)
+        public override int Visit(PropertyVisitor visitor)
         {
             return visitor.Visit(this);
         }

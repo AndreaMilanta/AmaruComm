@@ -15,7 +15,7 @@ namespace AmaruCommon.GameAssets.Cards.Properties.SpellAbilities
         {
             this.numHP = numHP;
         }
-        public override int Visit(IPropertyVisitor visitor)
+        public override int Visit(PropertyVisitor visitor)
         {
             return visitor.Visit(this);
         }

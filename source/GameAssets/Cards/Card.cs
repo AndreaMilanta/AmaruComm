@@ -1,5 +1,8 @@
 ﻿using System;
 
+using AmaruCommon.GameAssets.Players;
+using AmaruCommon.GameAssets.Cards.Properties;
+
 namespace AmaruCommon.GameAssets.Cards
 {
     [Serializable]
@@ -22,6 +25,14 @@ namespace AmaruCommon.GameAssets.Cards
                 this.Id = id;
             this.Cost = cost;
             this.Name = name;
+        }
+
+        public virtual void Visit(PropertyVisitor visitor, Player player, CardProperty property = null)
+        {
+            visitor.Player = player;
+            visitor.Card = this;
+            if (property != null)
+                property.Visit(visitor);
         }
     }
 }
