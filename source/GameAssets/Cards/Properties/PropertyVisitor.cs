@@ -68,5 +68,10 @@ namespace AmaruCommon.GameAssets.Cards.Properties
         public abstract int Visit(GainCPForCardPlayedEffect gainCPForCardPlayed);
         public abstract int Visit(DrawCardAndAttack drawCardAndAttack);
         public abstract int Visit(AttackBuffInSpecificZoneEffect attackBuffInSpecificZoneEffect);
+
+        internal int Visit(ImmunityCreatureEffect immunityCreatureEffect)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
