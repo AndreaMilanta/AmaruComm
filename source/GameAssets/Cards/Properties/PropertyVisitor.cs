@@ -5,14 +5,17 @@ using AmaruCommon.GameAssets.Cards.Properties.Attacks;
 using AmaruCommon.GameAssets.Cards.Properties.Abilities;
 using AmaruCommon.GameAssets.Cards.Properties.SpellAbilities;
 using AmaruCommon.GameAssets.Cards.Properties.CreatureEffects;
+using Logging;
 
 namespace AmaruCommon.GameAssets.Cards.Properties
 {
-    public abstract class PropertyVisitor
+    public abstract class PropertyVisitor : Loggable
     {
         // Set Card and Player
         public Card Card { get; set; }
         public Players.Player Player { get; set; }
+
+        public PropertyVisitor(string logger) : base(logger) { }
 
         // Attacks
         public abstract int Visit(GainCPAttack attack);

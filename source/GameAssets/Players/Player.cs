@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
+using Logging;
 using AmaruCommon.Exceptions;
 using AmaruCommon.Constants;
 using AmaruCommon.GameAssets.Cards;
@@ -14,7 +15,7 @@ using AmaruCommon.Actions.Targets;
 
 namespace AmaruCommon.GameAssets.Players
 {
-    public class Player
+    public class Player : Loggable
     {
         private int _mana = 0;
         // Properties
@@ -46,7 +47,7 @@ namespace AmaruCommon.GameAssets.Players
 
         public CharacterEnum Character { get; private set; } = CharacterEnum.INVALID;
          
-        public Player(CharacterEnum character)
+        public Player(CharacterEnum character, string logger) : base (logger)
         {
             Character = character;
             Deck = new Stack<Card>(DeckFactory.GetDeck(Character));
@@ -111,6 +112,7 @@ namespace AmaruCommon.GameAssets.Players
         public SpellCard PlayASpellFromHand(int id)
         {
             SpellCard spell = (SpellCard)GetCardFromId(id, Place.HAND);
+            Log("Played SpellCard is " + spell == null ? "null" : spell.Name);
             Mana -= spell.Cost;
             // remove this card from hand
             Hand.Remove(spell);

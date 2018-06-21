@@ -7,7 +7,7 @@ namespace AmaruCommon.GameAssets.Players
 {
     public class AmaruPlayer : Player
     {
-        public AmaruPlayer() : base(CharacterEnum.AMARU)
+        public AmaruPlayer(string logger) : base(CharacterEnum.AMARU, logger)
         {
             this.Health = AmaruConstants.INITIAL_AMARU_HEALTH;
         }

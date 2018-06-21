@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 
 using AmaruCommon.Constants;
@@ -11,6 +12,9 @@ namespace AmaruCommon.GameAssets.Characters
         // Singleton stuff
         private static CharacterManager _instance = null;
         public static CharacterManager Instance { get => _instance ?? new CharacterManager(); }
+
+        public ReadOnlyCollection<CharacterEnum> PlayCharacters { get => new ReadOnlyCollection<CharacterEnum>(_playCharacters); }
+        public ReadOnlyCollection<CharacterEnum> Characters { get => new ReadOnlyCollection<CharacterEnum>(_characters); }
 
         // Charactes definition
         private List<CharacterEnum> _playCharacters = new List<CharacterEnum>() {
