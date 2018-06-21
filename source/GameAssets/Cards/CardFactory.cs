@@ -132,7 +132,7 @@ namespace AmaruCommon.GameAssets.Cards
                 case Amaru.BodyGuardian:
                     return new CreatureCard("Body Guardian", 2, 6, null, shield: Shield.SHIELDMAIDEN);
                 case Amaru.AmaruAdept:
-                    return new CreatureCard("Amaru's Adept", 8, 11, new SimpleAttack(1, 2), shield: Shield.SHIELDUP);
+                    return new CreatureCard("Amaru's Adept", 3, 4, new SimpleAttack(1, 2), shield: Shield.SHIELDUP);
                 case Amaru.Colossus:
                     return new CreatureCard("Colossus", 5, 8, new SimpleAttack(1, 5));
                 case Amaru.Cataclysm:
