@@ -97,44 +97,23 @@ namespace AmaruCommon.GameAssets.Players
 
         public CreatureCard PlayACreatureFromHand(int id, Place z)
         {
-            // Debug.Log(ManaLeft);
-            // Debug.Log(playedCard.CurrentManaCost);
             CreatureCard creature = (CreatureCard) GetCardFromId(id, Place.HAND);
             Mana -= creature.Cost;
-            // Debug.Log("Mana Left after played a creature: " + ManaLeft);
-            // create a new creature object and add it to Table
-
             if (z == Place.INNER)
                 Inner.Add(creature);
             else
                 Outer.Add(creature);
-            
-            //new PlayACreatureCommand(playedCard, this, z, tablePos, newCreature.UniqueCreatureID).AddToQueue();
-            // cause battlecry Effect
-            //if (newCreature.effect != null)
-            //    newCreature.effect.WhenACreatureIsPlayed();
-            // remove this card from hand
             Hand.Remove(creature);
-
+            creature.Energy++;
             return creature;
         }
 
-        public SpellCard PlayASpellFromHand(int id, List<Target> targets)
+        public SpellCard PlayASpellFromHand(int id)
         {
             SpellCard spell = (SpellCard)GetCardFromId(id, Place.HAND);
             Mana -= spell.Cost;
-            // cause effect instantly:
-            /*if ((spell.Effect != null)
-                spell.Effect.Visit(playedCard.ca.specialSpellAmount, target);
-            else {
-                Debug.LogWarning("No effect found on card " + playedCard.ca.name);
-            }
-            */
-            // no matter what happens, move this card to PlayACardSpot
-           
             // remove this card from hand
             Hand.Remove(spell);
-            // check if this is a creature or a spell
             return spell;
         }
 

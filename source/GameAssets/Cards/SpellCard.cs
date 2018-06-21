@@ -10,6 +10,8 @@ namespace AmaruCommon.GameAssets.Cards
     [Serializable]
     public class SpellCard : Card
     {
+        public bool Immediate { get { return Effect.Immediate; } }
+
         public SpellAbility Effect { get; private set; }
 
         public SpellCard(string name, int cost, SpellAbility effect = null, int id = AmaruConstants.AUTO_ID) : base(id, name, cost)
