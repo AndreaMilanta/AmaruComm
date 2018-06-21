@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace AmaruCommon.GameAssets.Cards.Properties.CreatureEffects
 {
-    class ImmunityCreatureEffect : CreatureEffect
+    public class ImmunityCreatureEffect : CreatureEffect
     {
+        protected ImmunityCreatureEffect()
+        {
+
+        }
         public override int Visit(PropertyVisitor visitor)
         {
             return visitor.Visit(this);
