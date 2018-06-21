@@ -21,6 +21,6 @@ namespace AmaruCommon.Actions
         /// Visitor implementation
         /// </summary>
         /// <param name="visitor"></param>
-        public abstract void Visit(IActionVisitor visitor);
+        public abstract void Visit(ActionVisitor visitor);
     }
 }

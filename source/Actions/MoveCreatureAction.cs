@@ -20,7 +20,7 @@ namespace AmaruCommon.Actions
             this.TablePos = tablePos;
         }
 
-        public override void Visit(IActionVisitor visitor)
+        public override void Visit(ActionVisitor visitor)
         {
             visitor.Visit(this);
         }

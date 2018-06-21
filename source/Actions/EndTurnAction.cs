@@ -16,7 +16,7 @@ namespace AmaruCommon.Actions
             this.IsMainTurn = isMainTurn;
         }
 
-        public override void Visit(IActionVisitor visitor)
+        public override void Visit(ActionVisitor visitor)
         {
             visitor.Visit(this);
         }

@@ -17,7 +17,7 @@ namespace AmaruCommon.Actions
             this.Targets = targets;
         }
 
-        public override void Visit(IActionVisitor visitor)
+        public override void Visit(ActionVisitor visitor)
         {
             visitor.Visit(this);
         }

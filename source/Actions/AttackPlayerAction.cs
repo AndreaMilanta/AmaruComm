@@ -18,7 +18,7 @@ namespace AmaruCommon.Actions
             this.PlayedProperty = PlayedProperty;
         }
 
-        public override void Visit(IActionVisitor visitor)
+        public override void Visit(ActionVisitor visitor)
         {
             visitor.Visit(this);
         }
