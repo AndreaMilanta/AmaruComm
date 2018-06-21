@@ -93,7 +93,15 @@ namespace AmaruCommon.GameAssets.Players
         {
             if (place == Place.DECK)
                 throw new InvalidSearchLocation();
-            return ((List<Card>)_cardDict[place]).Find(c => c.Id == id);
+
+            Card card = null;
+
+            if(place == Place.INNER || place == Place.OUTER)
+                    card = ((List<CreatureCard>)_cardDict[place]).Find(c => c.Id == id);
+            if (place == Place.HAND)
+                    card = ((List<Card>)_cardDict[place]).Find(c => c.Id == id);
+
+            return card;
         }
 
         public CreatureCard PlayACreatureFromHand(int id, Place z)
