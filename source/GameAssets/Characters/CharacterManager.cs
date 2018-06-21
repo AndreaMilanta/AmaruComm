@@ -13,8 +13,8 @@ namespace AmaruCommon.GameAssets.Characters
         private static CharacterManager _instance = null;
         public static CharacterManager Instance { get => _instance ?? new CharacterManager(); }
 
-        public ReadOnlyCollection<CharacterEnum> PlayCharacters { get => new ReadOnlyCollection<CharacterEnum>(_playCharacters); }
-        public ReadOnlyCollection<CharacterEnum> Characters { get => new ReadOnlyCollection<CharacterEnum>(_characters); }
+        public List<CharacterEnum> PlayCharacters { get => new List<CharacterEnum>(_playCharacters); }
+        public List<CharacterEnum> Characters { get => new List<CharacterEnum>(_characters); }
 
         // Charactes definition
         private List<CharacterEnum> _playCharacters = new List<CharacterEnum>() {
