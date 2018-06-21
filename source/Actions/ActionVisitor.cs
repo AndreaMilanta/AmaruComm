@@ -12,6 +12,7 @@ namespace AmaruCommon.Actions
         public abstract void Visit(MoveCreatureAction action);
         public abstract void Visit(PlayACreatureFromHandAction action);
         public abstract void Visit(PlayASpellFromHandAction action);
-        public abstract void Visit(EndTurnAction endTurnAction);
+        public abstract void Visit(EndTurnAction action);
+        public abstract void Visit(AttackCreatureAction action);
     }
 }
