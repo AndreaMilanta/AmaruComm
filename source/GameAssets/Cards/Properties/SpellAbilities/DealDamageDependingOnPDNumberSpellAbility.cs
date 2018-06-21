@@ -11,7 +11,7 @@ namespace AmaruCommon.GameAssets.Cards.Properties.SpellAbilities
     [Serializable]
     public class DealDamageDependingOnPDNumberSpellAbility : SpellAbility
     {
-        protected DealDamageDependingOnPDNumberSpellAbility() : base(true)
+        protected DealDamageDependingOnPDNumberSpellAbility() : base(true,1,Constants.KindOfTarget.MIXED)
         {
         }
         public override int Visit(PropertyVisitor visitor)

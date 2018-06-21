@@ -12,7 +12,7 @@ namespace AmaruCommon.GameAssets.Cards.Properties.SpellAbilities
     public class ResurrectOrReturnToHandSpellAbility : SpellAbility
     {
         public Place myZone { get; private set; }
-        protected ResurrectOrReturnToHandSpellAbility(Place myZone) : base(true)
+        protected ResurrectOrReturnToHandSpellAbility(Place myZone, int numTarget) : base(true, numTarget, KindOfTarget.CREATURE)
         {
             this.myZone = myZone;
         }

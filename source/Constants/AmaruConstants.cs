@@ -59,6 +59,13 @@ namespace AmaruCommon.Constants
         BOTH
     }
     
+    public enum KindOfTarget
+    {
+        PLAYER,
+        CREATURE,
+        NONE,
+        MIXED
+    }
     // LIST OF CARDS (for implementation see CardFactory.cs)
 
     public enum Moraika
