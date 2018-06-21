@@ -10,7 +10,7 @@ namespace AmaruCommon.GameAssets.Cards
     [Serializable]
     public class SpellCard : Card
     {
-        public bool Immediate { get { return Effect.Immediate; } }
+        public bool Immediate { get { return Effect == null ? true : Effect.Immediate; } }
 
         public SpellAbility Effect { get; private set; }
 

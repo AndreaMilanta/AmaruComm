@@ -18,7 +18,7 @@ namespace AmaruCommon.GameAssets.Cards.Properties.Attacks
 
         public override int Visit(PropertyVisitor visitor)
         {
-            throw new System.NotImplementedException();
+            return visitor.Visit(this);
         }
     }
 }
