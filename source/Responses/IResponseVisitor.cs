@@ -9,5 +9,7 @@ namespace AmaruCommon.Responses
         void Visit(PlayACreatureResponse playACreatureResponse);
         void Visit(PlayASpellResponse playASpellResponse);
         void Visit(MoveCreatureResponse moveCreatureResponse);
+        void Visit(AttackCreatureResponse attackCreatureResponse);
+        void Visit(AttackPlayerResponse attackPlayerResponse);
     }
 }
