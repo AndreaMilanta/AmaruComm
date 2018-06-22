@@ -2,6 +2,7 @@
 
 using AmaruCommon.GameAssets.Players;
 using AmaruCommon.GameAssets.Cards.Properties;
+using AmaruCommon.GameAssets.Characters;
 
 namespace AmaruCommon.GameAssets.Cards
 {
@@ -30,10 +31,10 @@ namespace AmaruCommon.GameAssets.Cards
             this.Name = name;
         }
 
-        public virtual void Visit(PropertyVisitor visitor, Player player, CardProperty property = null)
+        public virtual void Visit(PropertyVisitor visitor, CharacterEnum character, CardProperty property = null)
         {
-            visitor.Player = player;
-            visitor.Card = this;
+            visitor.Owner = character;
+            visitor.OwnerCard = this;
             if (property != null)
                 property.Visit(visitor);
         }

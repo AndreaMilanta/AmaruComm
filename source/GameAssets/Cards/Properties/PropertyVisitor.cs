@@ -6,14 +6,15 @@ using AmaruCommon.GameAssets.Cards.Properties.Abilities;
 using AmaruCommon.GameAssets.Cards.Properties.SpellAbilities;
 using AmaruCommon.GameAssets.Cards.Properties.CreatureEffects;
 using Logging;
+using AmaruCommon.GameAssets.Characters;
 
 namespace AmaruCommon.GameAssets.Cards.Properties
 {
     public abstract class PropertyVisitor : Loggable
     {
         // Set Card and Player
-        public Card Card { get; set; }
-        public Players.Player Player { get; set; }
+        public Card OwnerCard { get; set; }
+        public CharacterEnum Owner { get; set; }
 
         public PropertyVisitor(string logger) : base(logger) { }
 
