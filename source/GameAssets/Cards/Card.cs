@@ -12,17 +12,20 @@ namespace AmaruCommon.GameAssets.Cards
         private static int _absoluteId = 0;
         private static int NextId { get => _absoluteId++;}
 
+        private CardEnum _cardEnum;
         // Properties
+        public Card Original { get => _cardEnum.Card; }
         public int Id { get; private set; }
         public int Cost { get; private set; }
         public string Name { get; private set; }
 
-        protected Card (int id, string name, int cost)
+        protected Card (int id, CardEnum cardEnum, string name, int cost)
         {
             if (id < 0)
                 this.Id = NextId;
             else
                 this.Id = id;
+            this._cardEnum = cardEnum;
             this.Cost = cost;
             this.Name = name;
         }
