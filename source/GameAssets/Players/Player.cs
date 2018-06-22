@@ -60,6 +60,23 @@ namespace AmaruCommon.GameAssets.Players
                     {Place.GRAVEYARD, Graveyard},
                 });
         }
+        public Player (Player p) : base ( "AiLogger")
+        {
+            this.Deck = new Stack<Card>(p.Deck);
+            this.Hand = new LimitedList<Card>(p.Hand);
+            this.Outer = new LimitedList<CreatureCard>(p.Outer);
+            this.Inner = new LimitedList<CreatureCard>(p.Inner);
+            this.Graveyard = new List<Card>(p.Graveyard);
+            this.Character = p.Character;
+            // Initializes readonly dict
+            _cardDict = new ReadOnlyDictionary<Place, IEnumerable<Card>>(new Dictionary<Place, IEnumerable<Card>>(){
+                    {Place.DECK, Deck},
+                    {Place.HAND, Hand},
+                    {Place.INNER, Inner},
+                    {Place.OUTER, Outer},
+                    {Place.GRAVEYARD, Graveyard},
+                });
+        }
 
         public Card Draw()
         {
