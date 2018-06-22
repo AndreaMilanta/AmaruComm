@@ -9,6 +9,7 @@ using AmaruCommon.GameAssets.Cards.Properties.Abilities;
 using AmaruCommon.GameAssets.Cards.Properties.Attacks;
 using AmaruCommon.GameAssets.Cards.Properties.CreatureEffects;
 using AmaruCommon.GameAssets.Cards.Properties.SpellAbilities;
+using AmaruCommon.GameAssets.Characters;
 
 namespace AmaruCommon.GameAssets.Cards.Properties
 {
@@ -19,6 +20,7 @@ namespace AmaruCommon.GameAssets.Cards.Properties
     /// - il target è del giocatore corretto (tutti / mio)
     /// NON Controlla:
     /// - il target è nella posizione giusta
+    /// - il target è immune da abilità, e spellabilites
     /// 
     /// </summary>
     public class TargetValidationVisitor : PropertyVisitor
@@ -88,137 +90,199 @@ namespace AmaruCommon.GameAssets.Cards.Properties
 
         public override int Visit(SalazarAbility ability)
         {
+            if (Target is PlayerTarget && Target.Character != this.Owner)
+                return 0;
+            throw new InvalidTargetException();
+        }
+
+        public override int Visit(SpendCPToDealDamageAbility ability)
+        {
+            // All allowed
+            return 0;
+            throw new InvalidTargetException();
+        }
+
+        public override int Visit(ResurrectOrTakeFromGraveyardAbility ability)
+        {
+            if (Target == null)
+                return 0;
+            throw new InvalidTargetException();
+        }
+
+        public override int Visit(SeribuAbility ability)
+        {
+            if (Target == null)
+                return 0;
+            throw new InvalidTargetException();
+        }
+
+        public override int Visit(KillIfPDAbility ability)
+        {
+            if (Target == null)
+                return 0;
+            throw new InvalidTargetException();
+        }
+
+        public override int Visit(SummonAbility ability)
+        {
+            if (Target == null)
+                return 0;
+            throw new InvalidTargetException();
+        }
+
+        public override int Visit(AmaruIncarnationAbility ability)
+        {
+            if (Target is CardTarget && Target.Character != CharacterEnum.AMARU)
+                return 0;
+            throw new InvalidTargetException();
+        }
+
+        public override int Visit(DamageDependingOnCreatureNumberAbility ability)
+        {
+            // all
             return 0;
         }
 
-        public override int Visit(SpendCPToDealDamageAbility spendCPToDealDamageAbility)
+        public override int Visit(BonusAttackDependingOnHealthAbility ability)
         {
-            return 0;
+            if (Target is CardTarget)
+                return 0;
+            throw new InvalidTargetException();
         }
 
-        public override int Visit(ResurrectOrTakeFromGraveyardAbility resurrectAbility)
+        public override int Visit(DamageWithPDAbility ability)
         {
-            return 0;
-        }
-
-        public override int Visit(SeribuAbility seribuAbility)
-        {
-            return 0;
-        }
-
-        public override int Visit(KillIfPDAbility killIfPDAbility)
-        {
-            return 0;
-        }
-
-        public override int Visit(SummonAbility summonAbility)
-        {
-            return 0;
-        }
-
-        public override int Visit(AmaruIncarnationAbility amaruIncarnationAbility)
-        {
-            return 0;
-        }
-
-        public override int Visit(DamageDependingOnCreatureNumberAbility damageDependingOnCreatureNumberAbility)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override int Visit(BonusAttackDependingOnHealthAbility bonusAttackDependingOnHealthAbility)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override int Visit(DamageWithPDAbility damageWithPDAbility)
-        {
-            throw new NotImplementedException();
+            if (Target is CardTarget && Target.Character == Owner)
+                return 0;
+            throw new InvalidTargetException();
         }
 
         public override int Visit(GiveEPAbility ability)
         {
-            throw new NotImplementedException();
+            if (Target is CardTarget && Target.Character != Owner)
+                return 0;
+            throw new InvalidTargetException();
         }
 
-        public override int Visit(GainCPAbility gainCPAbility)
+        public override int Visit(GainCPAbility ability)
         {
-            throw new NotImplementedException();
+            if (Target == null)
+                return 0;
+            if (Target is CardTarget)
+                if (((CardTarget)Target).CardId == this.OwnerCard.Id)
+                    return 0;
+            throw new InvalidTargetException();
         }
 
-        public override int Visit(DoubleHPAbility doubleHPAbility)
+        public override int Visit(DoubleHPAbility ability)
         {
-            throw new NotImplementedException();
+            if (Target == null)
+                return 0;
+            if (Target is CardTarget)
+                if (((CardTarget)Target).CardId == this.OwnerCard.Id)
+                    return 0;
+            throw new InvalidTargetException();
         }
 
-        public override int Visit(DuplicatorSpellAbility duplicatorSpellAbility)
+        public override int Visit(DuplicatorSpellAbility ability)
         {
-            throw new NotImplementedException();
+            if (Target is CardTarget && Target.Character == Owner)
+                return 0;
+            throw new InvalidTargetException();
         }
 
-        public override int Visit(AddEPAndDrawSpellAbility addEPAndDrawSpellAbility)
+        public override int Visit(AddEPAndDrawSpellAbility spellAbility)
         {
-            throw new NotImplementedException();
+            if (Target is CardTarget && Target.Character == Owner)
+                return 0;
+            throw new InvalidTargetException();
         }
 
-        public override int Visit(PDDamageToCreatureSpellAbility pDDamageToCreatureSpellAbility)
+        public override int Visit(PDDamageToCreatureSpellAbility spellAbility)
         {
-            throw new NotImplementedException();
+            if (Target is CardTarget && Target.Character != Owner)
+                return 0;
+            throw new InvalidTargetException();
         }
 
-        public override int Visit(ResurrectSpecificCreatureSpellAbility resurrectSpecificCreatureSpellAbility)
+        public override int Visit(ResurrectSpecificCreatureSpellAbility spellAbility)
         {
-            throw new NotImplementedException();
+            // TODO: Check!!
+            if (Target == null)
+                return 0;
+            throw new InvalidTargetException();
         }
 
-        public override int Visit(ResurrectOrReturnToHandSpellAbility resurrectOrReturnToHandSpellAbility)
+        public override int Visit(ResurrectOrReturnToHandSpellAbility spellAbility)
         {
-            throw new NotImplementedException();
+            // TODO: Check!!
+            if (Target == null)
+                return 0;
+            throw new InvalidTargetException();
         }
 
-        public override int Visit(GiveHPSpellAbility giveHPSpellAbility)
+        public override int Visit(GiveHPSpellAbility spellAbility)
         {
-            throw new NotImplementedException();
+            // return all;
+            return 0;
         }
 
         public override int Visit(GainCpSpellAbility gainCpSpellAbility)
         {
-            throw new NotImplementedException();
+            // TODO: Check!!
+            if (Target == null)
+                return 0;
+            throw new InvalidTargetException();
         }
 
-        public override int Visit(AttackFromInnerSpellAbility attackFromInnerSpellAbility)
+        public override int Visit(AttackFromInnerSpellAbility spellAbility)
         {
-            throw new NotImplementedException();
+            // TODO: Check!!
+            if (Target == null)
+                return 0;
+            throw new InvalidTargetException();
         }
 
-        public override int Visit(DealDamageDependingOnPDNumberSpellAbility dealDamageDependingOnPDNumberSpellAbility)
+        public override int Visit(DealDamageDependingOnPDNumberSpellAbility spellAbility)
         {
-            throw new NotImplementedException();
+            if (Target.Character != Owner)
+                return 0;
+            throw new InvalidTargetException();
         }
 
-        public override int Visit(DealDamageToEverythingSpellAbility dealDamageToEverythingSpellAbility)
+        public override int Visit(DealDamageToEverythingSpellAbility spellAbility)
         {
-            throw new NotImplementedException();
+            if (Target == null)
+                return 0;
+            throw new InvalidTargetException();
         }
 
-        public override int Visit(DealTotDamageToTotTargetsSpellAbility dealTotDamageToTotTargetsSpellAbility)
+        public override int Visit(DealTotDamageToTotTargetsSpellAbility spellAbility)
         {
-            throw new NotImplementedException();
+            if (Target.Character != Owner)
+                return 0;
+            throw new InvalidTargetException();
         }
 
-        public override int Visit(DamagePDToAllCreaturesOfTargetPlayerSpellAbility damagePDToAllCreaturesOfTargetPlayerSpellAbility)
+        public override int Visit(DamagePDToAllCreaturesOfTargetPlayerSpellAbility spellAbility)
         {
-            throw new NotImplementedException();
+            if (Target is PlayerTarget && Target.Character != Owner)
+                return 0;
+            throw new InvalidTargetException();
         }
 
-        public override int Visit(DealDamageDependingOnMAXHPSpeelAbility dealDamageDependingOnMAXHPSpeelAbility)
+        public override int Visit(DealDamageDependingOnMAXHPSpellAbility speelAbility)
         {
-            throw new NotImplementedException();
+            if (Target.Character != Owner)
+                return 0;
+            throw new InvalidTargetException();
         }
 
-        public override int Visit(AttackEqualToHPSpellAbility attackEqualToHPSpellAbility)
+        public override int Visit(AttackEqualToHPSpellAbility spellAbility)
         {
-            throw new NotImplementedException();
+            if (Target is CardTarget)
+                return 0;
+            throw new InvalidTargetException();
         }
 
         public override int Visit(HalveDamageIfPDEffect halveDamageIfPDEffect)

@@ -58,7 +58,7 @@ namespace AmaruCommon.GameAssets.Cards.Properties
         public abstract int Visit(DealDamageToEverythingSpellAbility dealDamageToEverythingSpellAbility);
         public abstract int Visit(DealTotDamageToTotTargetsSpellAbility dealTotDamageToTotTargetsSpellAbility);
         public abstract int Visit(DamagePDToAllCreaturesOfTargetPlayerSpellAbility damagePDToAllCreaturesOfTargetPlayerSpellAbility);
-        public abstract int Visit(DealDamageDependingOnMAXHPSpeelAbility dealDamageDependingOnMAXHPSpeelAbility);
+        public abstract int Visit(DealDamageDependingOnMAXHPSpellAbility dealDamageDependingOnMAXHPSpeelAbility);
         public abstract int Visit(AttackEqualToHPSpellAbility attackEqualToHPSpellAbility);
 
         //Creature Effect
