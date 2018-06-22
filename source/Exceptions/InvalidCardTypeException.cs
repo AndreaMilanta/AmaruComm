@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace AmaruServer.Game.Managing
+namespace AmaruCommon.Exceptions
 {
     [Serializable]
     public class InvalidCardTypeException : Exception
