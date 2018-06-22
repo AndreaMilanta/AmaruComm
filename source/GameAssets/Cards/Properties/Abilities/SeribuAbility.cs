@@ -8,7 +8,7 @@ namespace AmaruCommon.GameAssets.Cards.Properties.Abilities
     [Serializable]
     public class SeribuAbility : Ability
     {
-        protected SeribuAbility(int cost) : base(cost)
+        protected SeribuAbility(int cost, int numTarget) : base(cost, numTarget)
         {
         }
 

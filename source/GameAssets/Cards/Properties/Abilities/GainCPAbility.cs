@@ -11,7 +11,7 @@ namespace AmaruCommon.GameAssets.Cards.Properties.Abilities
     {
         public int cp { get; private set; }
 
-        protected GainCPAbility(int cost,int cp) : base (cost)
+        protected GainCPAbility(int cost, int numTarget, int cp) : base (cost, numTarget)
         {
             this.cp = cp;
         }

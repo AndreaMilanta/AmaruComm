@@ -15,10 +15,11 @@ namespace AmaruCommon.GameAssets.Cards.Properties.Abilities
         //Altrimenti qui gestiamo il numero di target e altrove le carte...
         public LimitedList<CreatureCard> myTargets { get; private set; }
         public int myDivisor { get; private set; }
-        protected BonusAttackDependingOnHealthAbility(int cost, int myDivisor, int myTargetsNumber) : base(cost)
+
+        protected BonusAttackDependingOnHealthAbility(int cost, int numTarget, int myDivisor) : base(cost, numTarget)
         {
             this.myDivisor = myDivisor;
-            this.myTargets = new LimitedList<CreatureCard>(myTargetsNumber);
+            this.myTargets = new LimitedList<CreatureCard>(numTarget);
         }
 
         //aggiungi un singolo elemento per volta

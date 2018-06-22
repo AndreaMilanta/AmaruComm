@@ -9,10 +9,11 @@ namespace AmaruCommon.GameAssets.Cards.Properties.Abilities
     [Serializable]
     public class SalazarAbility : Ability
     {
-        public int numTarget { get; private set; }
-        public int numPD { get; private set; }
-        protected SalazarAbility(int cost) : base(cost)
+        public int NumPD { get; private set; }
+
+        protected SalazarAbility(int cost, int numTarget, int numPD) : base(cost, numTarget)
         {
+            this.NumPD = numPD;
         }
 
         public override int Visit(PropertyVisitor visitor)

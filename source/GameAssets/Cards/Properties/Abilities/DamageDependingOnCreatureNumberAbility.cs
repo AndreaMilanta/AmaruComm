@@ -14,7 +14,7 @@ namespace AmaruCommon.GameAssets.Cards.Properties.Abilities
 
         public Place myZone { get; private set; }
         public int myBonusDamage { get; private set; }
-        protected DamageDependingOnCreatureNumberAbility(int cost, int bonusDamage, Place myZone) : base(cost)
+        protected DamageDependingOnCreatureNumberAbility(int cost, int numTarget, int bonusDamage, Place myZone) : base(cost, numTarget)
         {
             this.myBonusDamage = bonusDamage;
             this.myZone = myZone;

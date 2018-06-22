@@ -6,10 +6,11 @@ namespace AmaruCommon.GameAssets.Cards.Properties.Abilities
     public abstract class Ability : CardProperty
     {
         public int Cost { get; private set; }
-
-        protected Ability(int cost)
+        public int NumTarget { get; private set; }
+        protected Ability(int cost, int numTarget)
         {
             this.Cost = cost;
+            this.NumTarget = numTarget;
         }
 
         public abstract override int Visit(PropertyVisitor visitor);

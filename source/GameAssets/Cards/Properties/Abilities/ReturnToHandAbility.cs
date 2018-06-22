@@ -10,7 +10,7 @@ namespace AmaruCommon.GameAssets.Cards.Properties.Abilities
     public class ReturnToHandAbility : Ability
 
     {
-        protected ReturnToHandAbility(int cost) : base(cost)
+        protected ReturnToHandAbility(int cost, int numTarget) : base(cost, numTarget)
         {
         }
 

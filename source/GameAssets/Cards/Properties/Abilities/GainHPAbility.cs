@@ -7,7 +7,7 @@ namespace AmaruCommon.GameAssets.Cards.Properties.Abilities
     {
         public int Hp { get; private set; }
 
-        protected GainHPAbility(int cost, int hp) : base(cost)
+        protected GainHPAbility(int cost, int numTarget, int hp) : base(cost, numTarget)
         {
             this.Hp = hp;
         }

@@ -11,7 +11,8 @@ namespace AmaruCommon.GameAssets.Cards.Properties.Abilities
     public class ResurrectOrTakeFromGraveyardAbility : Ability
     {
         public Place myZone { get; private set; }
-        protected ResurrectOrTakeFromGraveyardAbility(int cost, Place myZone) : base(cost)
+
+        protected ResurrectOrTakeFromGraveyardAbility(int cost, int numTarget, Place myZone) : base(cost, numTarget)
         {
             this.myZone = myZone;
         }
