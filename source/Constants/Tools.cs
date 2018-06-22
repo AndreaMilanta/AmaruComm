@@ -25,5 +25,17 @@ namespace AmaruCommon.Constants
             }
             return list;
         }
+
+        public static Double calculateStd (List<double> values)
+        {
+            double mean = values.Average();
+            int t = 0;
+            double std = 0;
+            foreach (double i in values){
+                std += Math.Pow(i - mean,2);
+                t++;
+            }
+            return Math.Sqrt(std / t);
+        }
     }
 }
