@@ -1,14 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 namespace AmaruCommon.GameAssets.Cards.Properties.Abilities
 {
     [Serializable]
-    public class SeribuAbility : Ability
+    public class DoubleHPAbility : Ability
     {
-        public SeribuAbility(int cost, int numTarget) : base(cost, numTarget)
+
+        public DoubleHPAbility(int cost, int numTarget) : base(cost, numTarget)
         {
         }
 

@@ -11,7 +11,7 @@ namespace AmaruCommon.GameAssets.Cards.Properties.Abilities
     {
         public int Ep { get; private set; }
     
-        protected GiveEPAbility(int cost, int numTarget, int ep) : base(cost, numTarget)
+        public GiveEPAbility(int cost, int numTarget, int ep) : base(cost, numTarget)
         {
             this.Ep = ep;
         }

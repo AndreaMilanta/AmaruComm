@@ -10,7 +10,7 @@ namespace AmaruCommon.GameAssets.Cards.Properties.Abilities
     public class KillIfPDAbility : Ability
     {
         public int PDRequired { get; private set; }
-        protected KillIfPDAbility(int cost, int numTarget, int PDRequired) : base(cost,numTarget)
+        public KillIfPDAbility(int cost, int numTarget, int PDRequired) : base(cost,numTarget)
         {
             this.PDRequired = PDRequired;
         }

@@ -9,7 +9,7 @@ namespace AmaruCommon.GameAssets.Cards.Properties.Abilities
     [Serializable]
     public class AmaruIncarnationAbility : Ability
     {
-        protected AmaruIncarnationAbility(int cost, int numTarget) : base(cost, numTarget)
+        public AmaruIncarnationAbility(int cost, int numTarget) : base(cost, numTarget)
         {
         }
 

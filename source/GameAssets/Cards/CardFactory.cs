@@ -1,6 +1,7 @@
 ﻿using System;
 
 using AmaruCommon.Constants;
+using AmaruCommon.GameAssets.Cards.Properties.Abilities;
 using AmaruCommon.GameAssets.Cards.Properties.Attacks;
 
 namespace AmaruCommon.GameAssets.Cards
@@ -12,7 +13,7 @@ namespace AmaruCommon.GameAssets.Cards
             switch (card)
             {
                 case Moraika.Imperia:
-                    return new CreatureCard("Imperia", 5, 5, new ImperiaAttack(1));
+                    return new CreatureCard("Imperia", 5, 5, new ImperiaAttack(1), ability: new DoubleHPAbility(1,0));
                 case Moraika.RavenCrow:
                     return new CreatureCard("Raven Crow", 1, 2, new GainHPAttack(1, 1, 1, true),shield:Shield.SHIELDMAIDEN);
                 case Moraika.PoolOfLight:

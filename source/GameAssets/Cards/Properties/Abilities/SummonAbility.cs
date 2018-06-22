@@ -11,7 +11,7 @@ namespace AmaruCommon.GameAssets.Cards.Properties.Abilities
     {
         public CreatureCard toSummon { get; private set; }
 
-        protected SummonAbility(int cost, int numTarget, CreatureCard toSummon ): base(cost, numTarget)
+        public SummonAbility(int cost, int numTarget, CreatureCard toSummon ): base(cost, numTarget)
         {
             this.toSummon = toSummon;
         }

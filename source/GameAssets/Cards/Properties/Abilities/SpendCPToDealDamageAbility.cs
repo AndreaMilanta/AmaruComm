@@ -10,7 +10,7 @@ namespace AmaruCommon.GameAssets.Cards.Properties.Abilities
     public class SpendCPToDealDamageAbility : Ability
     {
 
-        protected SpendCPToDealDamageAbility(int cost, int numTarget) : base(cost, numTarget)
+        public SpendCPToDealDamageAbility(int cost, int numTarget) : base(cost, numTarget)
         {
 
         }

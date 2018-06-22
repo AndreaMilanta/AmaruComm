@@ -16,7 +16,7 @@ namespace AmaruCommon.GameAssets.Cards.Properties.Abilities
         public LimitedList<CreatureCard> myTargets { get; private set; }
         public int myDivisor { get; private set; }
 
-        protected BonusAttackDependingOnHealthAbility(int cost, int numTarget, int myDivisor) : base(cost, numTarget)
+        public BonusAttackDependingOnHealthAbility(int cost, int numTarget, int myDivisor) : base(cost, numTarget)
         {
             this.myDivisor = myDivisor;
             this.myTargets = new LimitedList<CreatureCard>(numTarget);
