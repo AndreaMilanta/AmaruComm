@@ -11,7 +11,7 @@ namespace AmaruCommon.GameAssets.Cards.Properties.SpellAbilities
     public class DuplicatorSpellAbility : SpellAbility
     {
 
-        protected DuplicatorSpellAbility() : base(true,1,Constants.KindOfTarget.CREATURE)
+        public DuplicatorSpellAbility() : base(true,1,Constants.KindOfTarget.CREATURE)
         {
         }
         public override int Visit(PropertyVisitor visitor)

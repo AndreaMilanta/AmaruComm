@@ -13,7 +13,7 @@ namespace AmaruCommon.GameAssets.Cards.Properties.SpellAbilities
         public int EpNumber { get; private set; }
         public int CardToDraw { get; private set; }
 
-        protected AddEPAndDrawSpellAbility (int EpNumber=1, int CardToDraw=1) : base (true,1, Constants.KindOfTarget.PLAYER)
+        public AddEPAndDrawSpellAbility (int EpNumber=1, int CardToDraw=1) : base (true,1, Constants.KindOfTarget.PLAYER)
         {
             this.EpNumber = EpNumber;
             this.CardToDraw = CardToDraw;

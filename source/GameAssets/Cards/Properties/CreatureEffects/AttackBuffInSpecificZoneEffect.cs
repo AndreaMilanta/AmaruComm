@@ -13,7 +13,7 @@ namespace AmaruCommon.GameAssets.Cards.Properties.CreatureEffects
         public int buffNumber { get; private set; }
         public Place myZone { get; private set; }
    
-        protected AttackBuffInSpecificZoneEffect (int buffNumber = 1, Place myZone = Place.OUTER)
+        public AttackBuffInSpecificZoneEffect (int buffNumber = 1, Place myZone = Place.OUTER)
         {
             this.buffNumber = buffNumber;
             this.myZone = myZone;

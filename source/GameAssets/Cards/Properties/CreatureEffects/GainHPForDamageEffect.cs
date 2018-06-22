@@ -11,8 +11,9 @@ namespace AmaruCommon.GameAssets.Cards.Properties.CreatureEffects
     public class GainHPForDamageEffect : CreatureEffect
     {
 
-        protected GainHPForDamageEffect()
+        public GainHPForDamageEffect()
         {
+
         }
         public override int Visit(PropertyVisitor visitor)
         {
