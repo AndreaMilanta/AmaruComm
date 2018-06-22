@@ -8,7 +8,6 @@ namespace AmaruCommon.Actions.Targets
     [Serializable]
     public class CardTarget : Target
     {
-        public CharacterEnum Character { get; private set; }
         public int CardId { get; private set; }
         public CreatureCard Card { get; private set; } = null;
 

@@ -79,12 +79,14 @@ namespace AmaruCommon.GameAssets.Cards.Properties
             throw new InvalidTargetException();
         }
 
-        public override int Visit(ReturnToHandAbility returnToHandAbility)
+        public override int Visit(ReturnToHandAbility ability)
         {
-            
+            if (Target is CardTarget && Target.Character == this.Owner)
+                return 0;
+            throw new InvalidTargetException();
         }
 
-        public override int Visit(SalazarAbility salazarAbility)
+        public override int Visit(SalazarAbility ability)
         {
             return 0;
         }
