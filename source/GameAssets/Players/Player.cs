@@ -62,6 +62,9 @@ namespace AmaruCommon.GameAssets.Players
         }
         public Player (Player p) : base ( "AiLogger")
         {
+            this.Mana = p.Mana;
+            this.Health = p.Health;
+            this.IsImmune = p.IsImmune;
             this.Deck = new Stack<Card>(p.Deck);
             this.Hand = new LimitedList<Card>(p.Hand);
             this.Outer = new LimitedList<CreatureCard>(p.Outer);
