@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace AmaruCommon.GameAssets.Cards.Properties.CreatureEffects
 {
+    [Serializable]
     public class HalveDamageIfPDEffect : CreatureEffect
     {
         public override int Visit(PropertyVisitor visitor)

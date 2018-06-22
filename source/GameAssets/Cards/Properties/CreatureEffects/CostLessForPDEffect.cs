@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace AmaruCommon.GameAssets.Cards.Properties.CreatureEffects
 {
+    [Serializable]
     public class CostLessForPDEffect : CreatureEffect
     {
 

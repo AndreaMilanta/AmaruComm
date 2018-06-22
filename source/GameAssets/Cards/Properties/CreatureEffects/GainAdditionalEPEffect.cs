@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace AmaruCommon.GameAssets.Cards.Properties.CreatureEffects
 {
+    [Serializable]
     public class GainAdditionalEPEffect : CreatureEffect
     {
         public int EPNumber { get; private set; }

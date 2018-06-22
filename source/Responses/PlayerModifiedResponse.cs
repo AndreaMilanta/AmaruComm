@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace AmaruCommon.Responses
 {
+    [Serializable]
     public class PlayerModifiedResponse : Response
-    {
+    {        
         public CharacterEnum Character { get; private set; }
         public int NewMana { get; private set; }
         public int NewHealth { get; private set; }
