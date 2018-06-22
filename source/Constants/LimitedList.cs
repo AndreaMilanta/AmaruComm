@@ -21,5 +21,9 @@ namespace AmaruCommon.Constants
             if (this.Count < this.MaxSize)
                 base.Add(newItem);
         }
+        public LimitedList(LimitedList<T> lt): base(lt)
+        {
+            this.MaxSize = lt.MaxSize;
+        }
     }
 }
