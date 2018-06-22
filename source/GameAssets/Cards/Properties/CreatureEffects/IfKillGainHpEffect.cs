@@ -13,7 +13,7 @@ namespace AmaruCommon.GameAssets.Cards.Properties.CreatureEffects
 
         public int HPToGain { get; private set; }
 
-        protected IfKillGainHPEffect(int hpToGain = 3)
+        public IfKillGainHPEffect(int hpToGain = 3)
         {
             this.HPToGain = hpToGain;
         }

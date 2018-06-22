@@ -10,9 +10,9 @@ namespace AmaruCommon.GameAssets.Cards.Properties.Attacks
     {
         public Target CreatureOrPlayer { get; private set; }
 
-        public DrawCardAndAttack(int cost, int power, Target kindOfTarget) : base(cost, power)
+        public DrawCardAndAttack(int cost, int power) : base(cost, power)
         {
-            this.CreatureOrPlayer = kindOfTarget;
+            
         }
 
         public override int Visit(PropertyVisitor visitor)

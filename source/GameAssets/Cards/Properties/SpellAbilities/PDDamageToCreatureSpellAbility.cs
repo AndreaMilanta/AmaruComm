@@ -11,7 +11,7 @@ namespace AmaruCommon.GameAssets.Cards.Properties.SpellAbilities
     public class PDDamageToCreatureSpellAbility : SpellAbility
     {
         public int PDDamage { get; private set; }
-        protected PDDamageToCreatureSpellAbility(int PDDamage = 3) : base(true,1, Constants.KindOfTarget.CREATURE)
+        public PDDamageToCreatureSpellAbility(int PDDamage = 3) : base(true,1, Constants.KindOfTarget.CREATURE)
         {
             this.PDDamage = PDDamage;
         }

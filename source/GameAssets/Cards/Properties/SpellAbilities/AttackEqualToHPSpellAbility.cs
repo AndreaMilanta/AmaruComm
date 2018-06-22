@@ -11,7 +11,7 @@ namespace AmaruCommon.GameAssets.Cards.Properties.SpellAbilities
     public class AttackEqualToHPSpellAbility : SpellAbility
     {
 
-        protected AttackEqualToHPSpellAbility(int numTarget = 1) : base (false,numTarget, Constants.KindOfTarget.CREATURE)
+        public AttackEqualToHPSpellAbility(int numTarget = 1) : base (false,numTarget, Constants.KindOfTarget.CREATURE)
         {
         }
         public override int Visit(PropertyVisitor visitor)

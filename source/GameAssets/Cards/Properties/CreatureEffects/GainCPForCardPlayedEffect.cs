@@ -11,7 +11,7 @@ namespace AmaruCommon.GameAssets.Cards.Properties.CreatureEffects
     {
         public int buffNumber { get; private set; }
 
-        protected GainCPForCardPlayedEffect(int buffNumber = 1)
+        public GainCPForCardPlayedEffect(int buffNumber = 1)
         {
             this.buffNumber = buffNumber;
         }

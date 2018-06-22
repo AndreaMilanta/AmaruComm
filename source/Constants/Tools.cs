@@ -28,7 +28,11 @@ namespace AmaruCommon.Constants
 
         public static Double calculateStd (List<double> values)
         {
-            double mean = values.Average();
+            if (values.Count == 0)
+            {
+                return 0;
+            }
+            double mean = calculateAverage(values);
             int t = 0;
             double std = 0;
             foreach (double i in values){
@@ -36,6 +40,21 @@ namespace AmaruCommon.Constants
                 t++;
             }
             return Math.Sqrt(std / t);
+        }
+        public static Double calculateAverage (List<Double> values)
+        {
+            if (values.Count == 0)
+            {
+                return 0;
+            }
+            int t = 0;
+            double mean = 0;
+            foreach (double i in values)
+            {
+                mean += i;
+                t++;
+            }
+            return  mean/t;
         }
     }
 }

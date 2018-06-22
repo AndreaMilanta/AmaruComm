@@ -13,7 +13,7 @@ namespace AmaruCommon.GameAssets.Cards.Properties.CreatureEffects
         public int EPNumber { get; private set; }
 
 
-        protected GainAdditionalEPEffect(int epNumber = 1, Place myZone = Place.OUTER)
+        public GainAdditionalEPEffect(int epNumber = 1, Place myZone = Place.OUTER)
         {
             this.EPNumber = epNumber;
         }

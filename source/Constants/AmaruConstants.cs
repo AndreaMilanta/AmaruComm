@@ -63,6 +63,7 @@ namespace AmaruCommon.Constants
     {
         PLAYER,
         CREATURE,
+        YOUR_CREATURE,
         NONE,
         MIXED
     }

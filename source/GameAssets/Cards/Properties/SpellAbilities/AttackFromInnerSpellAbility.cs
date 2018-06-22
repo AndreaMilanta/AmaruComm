@@ -11,7 +11,7 @@ namespace AmaruCommon.GameAssets.Cards.Properties.SpellAbilities
     {
         public int BonusAttack { get; private set; }
 
-        protected AttackFromInnerSpellAbility(int bonusAttack) : base(false,0, Constants.KindOfTarget.NONE)
+        public AttackFromInnerSpellAbility(int bonusAttack) : base(false,0, Constants.KindOfTarget.NONE)
         {
             this.BonusAttack = bonusAttack;
         }

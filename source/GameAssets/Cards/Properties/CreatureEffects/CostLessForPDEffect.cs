@@ -11,7 +11,7 @@ namespace AmaruCommon.GameAssets.Cards.Properties.CreatureEffects
     public class CostLessForPDEffect : CreatureEffect
     {
 
-        protected CostLessForPDEffect()
+        public CostLessForPDEffect()
         {
         
         }
