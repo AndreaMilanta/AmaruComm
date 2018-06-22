@@ -19,7 +19,7 @@ namespace AmaruCommon.GameAssets.Cards
         public Ability Ability { get; private set; }
         public Attack Attack { get; private set; }
 
-        public CreatureCard(string name, int cost, int health, Attack attack, CreatureEffect creatureEffect = null, Ability ability = null, Shield shield = Shield.NONE, int id = AmaruConstants.AUTO_ID) : base(id, name, cost)
+        public CreatureCard(CardEnum cardEnum, string name, int cost, int health, Attack attack, CreatureEffect creatureEffect = null, Ability ability = null, Shield shield = Shield.NONE, int id = AmaruConstants.AUTO_ID) : base(id, cardEnum, name, cost)
         {
             this.Health = health;
             this.Attack = attack;
