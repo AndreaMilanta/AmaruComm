@@ -6,6 +6,7 @@ using AmaruCommon.GameAssets.Cards.Properties.Abilities;
 using AmaruCommon.GameAssets.Cards.Properties;
 using AmaruCommon.GameAssets.Players;
 using AmaruCommon.GameAssets.Cards.Properties.CreatureEffects;
+using AmaruCommon.GameAssets.Characters;
 
 namespace AmaruCommon.GameAssets.Cards
 {
@@ -28,14 +29,14 @@ namespace AmaruCommon.GameAssets.Cards
             this.creatureEffect = creatureEffect;
         }
 
-        public override void Visit(PropertyVisitor visitor, Player player, CardProperty property = null)
+        public override void Visit(PropertyVisitor visitor, CharacterEnum character, CardProperty property = null)
         {
             if (property != null)
-                base.Visit(visitor, player, property);
+                base.Visit(visitor, character, property);
             else
             {
-                base.Visit(visitor, player, Attack);
-                base.Visit(visitor, player, Ability);
+                base.Visit(visitor, character, Attack);
+                base.Visit(visitor, character, Ability);
             }
         }
     }

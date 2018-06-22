@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using AmaruCommon.Constants;
 using AmaruCommon.GameAssets.Cards.Properties;
 using AmaruCommon.GameAssets.Cards.Properties.SpellAbilities;
+using AmaruCommon.GameAssets.Characters;
 using AmaruCommon.GameAssets.Players;
 
 namespace AmaruCommon.GameAssets.Cards
@@ -20,13 +21,13 @@ namespace AmaruCommon.GameAssets.Cards
         }
 
 
-        public override void Visit(PropertyVisitor visitor, Player player, CardProperty property = null)
+        public override void Visit(PropertyVisitor visitor, CharacterEnum character, CardProperty property = null)
         {
             if (property != null)
-                base.Visit(visitor, player, property);
+                base.Visit(visitor, character, property);
             else
             {
-                base.Visit(visitor, player, Effect);
+                base.Visit(visitor, character, Effect);
             }
         }
     }

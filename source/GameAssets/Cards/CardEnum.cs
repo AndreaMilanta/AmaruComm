@@ -9,6 +9,7 @@ using AmaruCommon.GameAssets.Characters;
 
 namespace AmaruCommon.GameAssets.Cards
 {
+    [Serializable]
     public class CardEnum
     {
         public CharacterEnum Character { get; private set; }
