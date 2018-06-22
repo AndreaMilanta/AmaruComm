@@ -18,7 +18,7 @@ namespace AmaruCommon.Responses
         {
             this.Character = character;
             this.NewMana = newMana;
-            this.NewHealth = NewHealth;
+            this.NewHealth = newHealth;
         }
 
         public override void Visit(IResponseVisitor visitor)
