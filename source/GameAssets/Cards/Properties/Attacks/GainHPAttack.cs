@@ -14,7 +14,7 @@ namespace AmaruCommon.GameAssets.Cards.Properties.Attacks
         public GainHPAttack(int cost, int power, int hp, bool toCreature) : base(cost, power)
         {
             this.Hp = hp;
-            this.ToCreature = ToCreature;
+            this.ToCreature = toCreature;
         }
 
         public override int Visit(PropertyVisitor visitor)
