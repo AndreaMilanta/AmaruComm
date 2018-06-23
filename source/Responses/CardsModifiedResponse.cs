@@ -11,7 +11,7 @@ namespace AmaruCommon.Responses
     [Serializable]
     public class CardsModifiedResponse : Response
     {
-        public List<CreatureCard> Cards { get; set; }
+        public List<CreatureCard> Cards { get; private set; } = null;
 
         public CardsModifiedResponse(List<CreatureCard> cards)
         {
