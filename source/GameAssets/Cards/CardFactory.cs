@@ -139,7 +139,8 @@ namespace AmaruCommon.GameAssets.Cards
                 case Amaru.Colossus:
                     return new CreatureCard(new CardEnum(card), "Colossus", 5, 8, new SimpleAttack(1, 5), creatureEffect: new ImmunityCreatureEffect());
                 case Amaru.Cataclysm:
-                    return new SpellCard(new CardEnum(card), "Cataclysm", 4, new DealDamageToEverythingSpellAbility());
+                    //     return new SpellCard(new CardEnum(card), "Cataclysm", 4, new DealDamageToEverythingSpellAbility());
+                    return new CreatureCard(new CardEnum(card), "Cataclysm", 2, 2, new SimpleAttack(1, 1), ability: new GiveEPAbility(1, 1, 1));
                 case Amaru.SpiritualPortal:
                     return new SpellCard(new CardEnum(card), "Spiritual Portal", 2, new ResurrectOrReturnToHandSpellAbility(Place.OUTER,0));
                 case Amaru.PowerOfResurrection:

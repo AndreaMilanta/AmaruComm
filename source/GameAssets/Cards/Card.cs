@@ -16,7 +16,7 @@ namespace AmaruCommon.GameAssets.Cards
         private CardEnum _cardEnum;
         // Properties
         public Card Original { get => _cardEnum.Card; }
-        public int Id { get; private set; }
+        public int Id { get; set; }
         public int Cost { get; private set; }
         public string Name { get; private set; }
 
