@@ -40,5 +40,17 @@ namespace AmaruCommon.GameAssets.Cards
                 base.Visit(visitor, character, Ability);
             }
         }
+        public CreatureCard clone()
+        {
+            CreatureCard card = (CreatureCard)this.Original;
+            card.Health = this.Health;
+            card.Energy = this.Energy;
+            card.Attack = this.Attack;
+            card.Ability = this.Ability;
+            card.creatureEffect = this.creatureEffect;
+            card.Shield = this.Shield;
+            card.Id = this.Id;
+            return card;
+        }
     }
 }

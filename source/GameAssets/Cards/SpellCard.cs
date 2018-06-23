@@ -30,5 +30,10 @@ namespace AmaruCommon.GameAssets.Cards
                 base.Visit(visitor, character, Effect);
             }
         }
+        public SpellCard clone()
+        {
+            SpellCard card = (SpellCard)this.Original;
+            return card;
+        }
     }
 }

@@ -37,8 +37,7 @@ namespace AmaruCommon.GameAssets.Players
         public LimitedList<Card> Hand { get; private set; } = new LimitedList<Card>(AmaruConstants.HAND_MAX_SIZE);
         public LimitedList<CreatureCard> Inner { get; private set;} = new LimitedList<CreatureCard>(AmaruConstants.INNER_MAX_SIZE);
         public LimitedList<CreatureCard> Outer { get; private set; } = new LimitedList<CreatureCard>(AmaruConstants.OUTER_MAX_SIZE);
-        public List<Card> Graveyard { get; private set; } = new List<Card>();
-        public List<SpellCard> PlayedSpell { get; private set; } = null;
+        public List<SpellCard> PlayedSpell { get; private set; } = new List<SpellCard>();
         private ReadOnlyDictionary<Place, IEnumerable<Card>> _cardDict; 
 
         // Communication
@@ -57,7 +56,6 @@ namespace AmaruCommon.GameAssets.Players
                     {Place.HAND, Hand},
                     {Place.INNER, Inner},
                     {Place.OUTER, Outer},
-                    {Place.GRAVEYARD, Graveyard},
                 });
         }
         public Player (Player p) : base ( "AiLogger")
@@ -65,20 +63,56 @@ namespace AmaruCommon.GameAssets.Players
             this.Mana = p.Mana;
             this.Health = p.Health;
             this.IsImmune = p.IsImmune;
-            this.Deck = new Stack<Card>(p.Deck);
-            this.Hand = new LimitedList<Card>(p.Hand);
-            this.Outer = new LimitedList<CreatureCard>(p.Outer);
-            this.Inner = new LimitedList<CreatureCard>(p.Inner);
-            this.Graveyard = new List<Card>(p.Graveyard);
+            this.Deck = new Stack<Card>();
+            List<Card> deckIn = p.Deck.ToList();
+            deckIn.Reverse();
+            foreach(Card c in deckIn)
+            {
+                if(c is SpellCard)
+                {
+                    this.Deck.Push(((SpellCard)c).clone());
+                }
+                else if(c is CreatureCard)
+                {
+                    this.Deck.Push(((CreatureCard)c).clone());
+                }
+            }
+            this.Hand = new LimitedList<Card>(AmaruConstants.HAND_MAX_SIZE);
+            foreach(Card c in p.Hand)
+            {
+                if (c is SpellCard)
+                {
+                    this.Hand.Add(((SpellCard)c).clone());
+                }
+                else if (c is CreatureCard)
+                {
+                    this.Hand.Add(((CreatureCard)c).clone());
+                }
+            }
+            this.Outer = new LimitedList<CreatureCard>(AmaruConstants.OUTER_MAX_SIZE);
+            foreach (CreatureCard c in p.Outer)
+            {
+                this.Outer.Add(c.clone());
+            }
+            this.Inner = new LimitedList<CreatureCard>(AmaruConstants.INNER_MAX_SIZE);
+            foreach (CreatureCard c in p.Inner)
+            {
+                this.Inner.Add(c.clone());
+            }
+
             this.Character = p.Character;
             // Initializes readonly dict
-            _cardDict = new ReadOnlyDictionary<Place, IEnumerable<Card>>(new Dictionary<Place, IEnumerable<Card>>(){
-                    {Place.DECK, Deck},
-                    {Place.HAND, Hand},
-                    {Place.INNER, Inner},
-                    {Place.OUTER, Outer},
-                    {Place.GRAVEYARD, Graveyard},
+            this._cardDict = new ReadOnlyDictionary<Place, IEnumerable<Card>>(new Dictionary<Place, IEnumerable<Card>>(){
+                    {Place.DECK, this.Deck},
+                    {Place.HAND, this.Hand},
+                    {Place.INNER, this.Inner},
+                    {Place.OUTER, this.Outer},
                 });
+
+            foreach (SpellCard sc in p.PlayedSpell)
+            {
+                this.PlayedSpell.Add(((SpellCard)sc).clone());
+            }
         }
 
         public Card Draw()
