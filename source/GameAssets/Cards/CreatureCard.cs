@@ -50,6 +50,7 @@ namespace AmaruCommon.GameAssets.Cards
             card.creatureEffect = this.creatureEffect;
             card.Shield = this.Shield;
             card.Id = this.Id;
+            card.PoisonDamage = this.PoisonDamage;
             return card;
         }
     }
