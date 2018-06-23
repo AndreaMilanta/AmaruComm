@@ -105,7 +105,7 @@ namespace AmaruCommon.GameAssets.Cards
                 case Yaku.BlackSeaNettle:
                     return new CreatureCard(new CardEnum(card), "Black Sea Nettle", 1, 1, new GainCPAttack(1, 1, 1), ability: new GainCPAbility(1,0,2));
                 case Yaku.RoyalStarfish:
-                    return new CreatureCard(new CardEnum(card), "Royal Starfish", 2, 2, new SimpleAttack(1, 1), ability: new GiveEPAbility(1,1,1));
+                    return new CreatureCard(new CardEnum(card), "Royal Starfish", 2, 2, new SimpleAttack(1, 2), ability: new GiveEPAbility(1,1,1));
                 case Yaku.BigClawSnappingShrimp:
                     return new CreatureCard(new CardEnum(card), "Big-Claw Snapping Shrimp", 3, 3, new SimpleAttack(1, 2), ability: new SpendCPToDealDamageAbility(3,1));
                 case Yaku.MuggerCrocodile:
