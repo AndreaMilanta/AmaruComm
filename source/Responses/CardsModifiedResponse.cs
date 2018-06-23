@@ -8,6 +8,7 @@ using AmaruCommon.GameAssets.Cards;
 
 namespace AmaruCommon.Responses
 {
+    [Serializable]
     public class CardsModifiedResponse : Response
     {
         public List<CreatureCard> Cards { get; set; }

@@ -8,6 +8,7 @@ using AmaruCommon.GameAssets.Characters;
 
 namespace AmaruCommon.Actions
 {
+    [Serializable]
     public class UseAbilityAction : PlayerAction
     {
         public List<Target> Targets { get; private set; } = null;
