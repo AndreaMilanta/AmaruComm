@@ -19,14 +19,16 @@ namespace AmaruCommon.GameAssets.Cards
         public CreatureEffect creatureEffect { get; private set; }
         public Ability Ability { get; private set; }
         public Attack Attack { get; private set; }
+        public bool IsLegendary { get; private set; }
         public int PoisonDamage { get; set; } = 0;
 
-        public CreatureCard(CardEnum cardEnum, string name, int cost, int health, Attack attack, CreatureEffect creatureEffect = null, Ability ability = null, Shield shield = Shield.NONE, int id = AmaruConstants.AUTO_ID) : base(id, cardEnum, name, cost)
+        public CreatureCard(CardEnum cardEnum, string name, int cost, int health, Attack attack, CreatureEffect creatureEffect = null, Ability ability = null, Shield shield = Shield.NONE, bool isLegendary = false, int id = AmaruConstants.AUTO_ID) : base(id, cardEnum, name, cost)
         {
             this.Health = health;
             this.Attack = attack;
             this.Ability = ability;
             this.Shield = shield;
+            this.IsLegendary = IsLegendary;
             this.creatureEffect = creatureEffect;
         }
 

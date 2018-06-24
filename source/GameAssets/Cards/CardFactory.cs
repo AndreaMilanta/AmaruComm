@@ -15,7 +15,7 @@ namespace AmaruCommon.GameAssets.Cards
             switch (card)
             {
                 case Moraika.Imperia:
-                    return new CreatureCard(new CardEnum(card), "Imperia", 5, 5, new ImperiaAttack(1), ability: new DoubleHPAbility(1,0));
+                    return new CreatureCard(new CardEnum(card), "Imperia", 5, 5, new ImperiaAttack(1), ability: new DoubleHPAbility(1,0), isLegendary: true);
                 case Moraika.RavenCrow:
                     return new CreatureCard(new CardEnum(card), "Raven Crow", 1, 2, new GainHPAttack(1, 1, 1, true),shield:Shield.SHIELDMAIDEN);
                 case Moraika.PoolOfLight:
@@ -43,7 +43,7 @@ namespace AmaruCommon.GameAssets.Cards
             switch (card)
             {
                 case Luna.Salazar:
-                    return new CreatureCard(new CardEnum(card), "Salazar", 5, 7, new SalazarAttack(1), ability: new SalazarAbility(1,1,1));
+                    return new CreatureCard(new CardEnum(card), "Salazar", 5, 7, new SalazarAttack(1), ability: new SalazarAbility(1,1,1), isLegendary: true);
                 case Luna.BlackMamba:
                     return new CreatureCard(new CardEnum(card), "Black Mamba", 1, 2, new PoisonAttack(1, 2), creatureEffect: new GainAdditionalEPEffect(), ability: new DamageWithPDAbility(2,1,2));
                 case Luna.GreenAnaconda:
@@ -71,7 +71,7 @@ namespace AmaruCommon.GameAssets.Cards
             switch (card)
             {
                 case Leon.Seribu:
-                    return new CreatureCard(new CardEnum(card), "Seribu", 5, 7, new SeribuAttack(1), ability: new SeribuAbility(1,0));
+                    return new CreatureCard(new CardEnum(card), "Seribu", 5, 7, new SeribuAttack(1), ability: new SeribuAbility(1,0), isLegendary: true);
                 case Leon.LightingLynx:
                     return new CreatureCard(new CardEnum(card), "Lighting Lynx", 1, 1, new SimpleAttack(1, 3));
                 case Leon.ShieldedBear:
@@ -101,7 +101,7 @@ namespace AmaruCommon.GameAssets.Cards
             switch (card)
             {
                 case Yaku.Krum:
-                    return new CreatureCard(new CardEnum(card), "Krum", 7, 9, new KrumAttack(1), creatureEffect: new GainCPForCardPlayedEffect());
+                    return new CreatureCard(new CardEnum(card), "Krum", 7, 9, new KrumAttack(1), creatureEffect: new GainCPForCardPlayedEffect(), isLegendary: true);
                 case Yaku.BlackSeaNettle:
                     return new CreatureCard(new CardEnum(card), "Black Sea Nettle", 1, 1, new GainCPAttack(1, 1, 1), ability: new GainCPAbility(1,0,2));
                 case Yaku.RoyalStarfish:
@@ -129,7 +129,7 @@ namespace AmaruCommon.GameAssets.Cards
             switch (card)
             {
                 case Amaru.AmaruIncarnation:
-                    return new CreatureCard(new CardEnum(card), "Amaru's Incarnation", 8, 11, new SimpleAttack(1,7), ability: new AmaruIncarnationAbility(1,1), shield:Shield.SHIELDUP);
+                    return new CreatureCard(new CardEnum(card), "Amaru's Incarnation", 8, 11, new SimpleAttack(1,7), ability: new AmaruIncarnationAbility(1,1), shield:Shield.SHIELDUP, isLegendary: true);
                 case Amaru.SoulGuardian:
                     return new CreatureCard(new CardEnum(card), "Soul Guardian", 2, 6, null, ability: new ResurrectOrTakeFromGraveyardAbility(2,1,Place.OUTER), shield: Shield.SHIELDUP);
                 case Amaru.BodyGuardian:
