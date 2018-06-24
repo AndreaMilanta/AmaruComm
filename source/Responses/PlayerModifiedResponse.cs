@@ -8,17 +8,38 @@ using System.Threading.Tasks;
 namespace AmaruCommon.Responses
 {
     [Serializable]
-    public class PlayerModifiedResponse : Response
-    {        
+    public struct PlayerMod
+    {
         public CharacterEnum Character { get; private set; }
         public int NewMana { get; private set; }
         public int NewHealth { get; private set; }
-        
-        public PlayerModifiedResponse(CharacterEnum character, int newMana, int newHealth)
+
+        public PlayerMod(CharacterEnum character, int newMana, int newHealth)
         {
             this.Character = character;
             this.NewMana = newMana;
             this.NewHealth = newHealth;
+        }
+    }
+
+    [Serializable]
+    public class PlayerModifiedResponse : Response
+    {
+        public List<PlayerMod> Modifieds;
+        
+        public PlayerModifiedResponse(CharacterEnum character, int newMana, int newHealth)
+        {
+            Modifieds = new List<PlayerMod>() {new PlayerMod(character, newMana, newHealth)};
+        }
+
+        public PlayerModifiedResponse(PlayerMod pMod)
+        {
+            Modifieds = new List<PlayerMod>() { pMod };
+        }
+
+        public PlayerModifiedResponse(List<PlayerMod> mods)
+        {
+            Modifieds = mods;
         }
 
         public override void Visit(IResponseVisitor visitor)

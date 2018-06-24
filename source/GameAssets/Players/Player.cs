@@ -58,6 +58,7 @@ namespace AmaruCommon.GameAssets.Players
                     {Place.OUTER, Outer},
                 });
         }
+
         public Player (Player p) : base ( "AiLogger")
         {
             this.Mana = p.Mana;
@@ -113,6 +114,16 @@ namespace AmaruCommon.GameAssets.Players
             {
                 this.PlayedSpell.Add(((SpellCard)sc).clone());
             }
+        }
+
+        public void Refresh()
+        {
+            foreach (CreatureCard card in Inner)
+                if (card.Health <= 0)
+                    Inner.Remove(card);
+            foreach (CreatureCard card in Outer)
+                if (card.Health <= 0)
+                    Outer.Remove(card);
         }
 
         public Card Draw()

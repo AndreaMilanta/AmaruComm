@@ -9,11 +9,12 @@ namespace AmaruCommon.GameAssets.Cards.Properties.Attacks
     [Serializable]
     public class SimpleAttack : Attack
     {
-        public int Power { get; private set; }
+        private int _power = 0;
+        public int Power { get { return _power + BonusAttack; } }
 
         public SimpleAttack(int cost, int power) : base(cost)
         {
-            this.Power = power;
+            this._power = power;
         }
 
         public override int Visit(PropertyVisitor visitor)
