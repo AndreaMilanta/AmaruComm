@@ -21,8 +21,9 @@ namespace AmaruCommon.GameAssets.Cards
         public Attack Attack { get; set; }
         public bool IsLegendary { get; private set; }
         public int PoisonDamage { get; set; } = 0;
+        public bool IsCloned;
 
-        public CreatureCard(CardEnum cardEnum, string name, int cost, int health, Attack attack, CreatureEffect creatureEffect = null, Ability ability = null, Shield shield = Shield.NONE, bool isLegendary = false, int id = AmaruConstants.AUTO_ID) : base(id, cardEnum, name, cost)
+        public CreatureCard(CardEnum cardEnum, string name, int cost, int health, Attack attack, CreatureEffect creatureEffect = null, Ability ability = null, Shield shield = Shield.NONE, bool isLegendary = false, int id = AmaruConstants.AUTO_ID, bool isCloned = false) : base(id, cardEnum, name, cost)
         {
             this.Health = health;
             this.Attack = attack;
@@ -30,6 +31,7 @@ namespace AmaruCommon.GameAssets.Cards
             this.Shield = shield;
             this.IsLegendary = IsLegendary;
             this.creatureEffect = creatureEffect;
+            this.IsCloned = isCloned;
         }
 
         public override void Visit(PropertyVisitor visitor, CharacterEnum character, CardProperty property = null)

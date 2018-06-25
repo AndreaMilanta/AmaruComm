@@ -20,6 +20,8 @@ namespace AmaruCommon.Constants
         {
             if (this.Count < this.MaxSize)
                 base.Add(newItem);
+            else
+                throw new LimitedListOutOfBoundException();
         }
         public LimitedList(LimitedList<T> lt): base(lt)
         {

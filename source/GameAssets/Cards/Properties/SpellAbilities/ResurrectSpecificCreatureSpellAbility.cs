@@ -13,10 +13,8 @@ namespace AmaruCommon.GameAssets.Cards.Properties.SpellAbilities
     public class ResurrectSpecificCreatureSpellAbility : SpellAbility
     {
         public Place myZone { get; private set; }
-        public CreatureCard myTarget { get; private set; }
         public ResurrectSpecificCreatureSpellAbility(Place myZone, int numTarget) : base(true, numTarget, KindOfTarget.CREATURE)
         {
-            this.myTarget = myTarget;
             this.myZone = myZone;
         }
 
