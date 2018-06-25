@@ -19,7 +19,13 @@ namespace AmaruCommon.GameAssets.Players
     {
         private int _mana = 0;
         // Properties
-        public int Mana { get => _mana; set => _mana = value > AmaruConstants.MAX_MANA ? AmaruConstants.MAX_MANA : value; }
+        public int Mana {
+            get => _mana;
+            set {
+                if (value < _mana) 
+                    ManaSpentThisTurn += _mana - value;
+                _mana = value > AmaruConstants.MAX_MANA ? AmaruConstants.MAX_MANA : value; }
+        }
         public int Health { get; set; } = AmaruConstants.INITIAL_PLAYER_HEALTH;
         public bool IsShieldUpProtected { get => Outer.Exists(o => o.Shield == Shield.SHIELDUP || o.Shield == Shield.BOTH); }
         public bool IsShieldMaidenProtected { get => Outer.Exists(o => o.Shield == Shield.SHIELDMAIDEN || o.Shield == Shield.BOTH); }
@@ -30,7 +36,7 @@ namespace AmaruCommon.GameAssets.Players
 
         private int _initialTurnMana = 0;
 
-        public int ManaPlayedCount { get => this.Mana - _initialTurnMana; }
+        public int ManaSpentThisTurn { get; set; }
 
         // Cards
         public Stack<Card> Deck { get; private set; } = null;
@@ -201,7 +207,7 @@ namespace AmaruCommon.GameAssets.Players
 
         public void ResetManaCount()
         {
-            _initialTurnMana = this.Mana;
+            ManaSpentThisTurn = 0;
         }
     }
 }
