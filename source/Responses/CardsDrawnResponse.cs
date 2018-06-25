@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace AmaruCommon.Responses
 {
+    [Serializable]
     public struct CardMovement
     {
         public Place Source { get; private set; }
@@ -23,6 +24,7 @@ namespace AmaruCommon.Responses
         }
     }
 
+    [Serializable]
     public class CardsDrawnResponse : Response
     {
         public CharacterEnum Caller { get; private set; }
