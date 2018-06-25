@@ -33,6 +33,8 @@ namespace AmaruCommon.GameAssets.Cards
         public SpellCard clone()
         {
             SpellCard card = (SpellCard)this.Original;
+            card.Id = this.Id;
+            card.Effect = this.Effect;
             return card;
         }
     }

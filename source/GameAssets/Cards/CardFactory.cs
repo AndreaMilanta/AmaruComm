@@ -131,9 +131,9 @@ namespace AmaruCommon.GameAssets.Cards
                 case Amaru.AmaruIncarnation:
                     return new CreatureCard(new CardEnum(card), "Amaru's Incarnation", 8, 11, new SimpleAttack(1,7), ability: new AmaruIncarnationAbility(1,1), shield:Shield.SHIELDUP, isLegendary: true);
                 case Amaru.SoulGuardian:
-                    return new CreatureCard(new CardEnum(card), "Soul Guardian", 2, 6, null, ability: new ResurrectOrTakeFromGraveyardAbility(2,1,Place.OUTER), shield: Shield.SHIELDUP);
+                    return new CreatureCard(new CardEnum(card), "Soul Guardian", 2, 6, null, ability: new ResurrectOrTakeFromGraveyardAbility(2,0,Place.OUTER), shield: Shield.SHIELDUP);
                 case Amaru.BodyGuardian:
-                    return new CreatureCard(new CardEnum(card), "Body Guardian", 2, 6, null, ability: new ResurrectOrTakeFromGraveyardAbility(2, 1, Place.INNER), shield: Shield.SHIELDMAIDEN);
+                    return new CreatureCard(new CardEnum(card), "Body Guardian", 2, 6, null, ability: new ResurrectOrTakeFromGraveyardAbility(2, 0, Place.OUTER), shield: Shield.SHIELDMAIDEN);
                 case Amaru.AmaruAdept:
                     return new CreatureCard(new CardEnum(card), "Amaru's Adept", 3, 4, new SimpleAttack(1, 2), creatureEffect: new ImmunityCreatureEffect(), shield: Shield.SHIELDUP);
                 case Amaru.Colossus:
