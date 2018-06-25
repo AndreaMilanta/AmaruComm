@@ -53,6 +53,7 @@ namespace AmaruCommon.GameAssets.Cards
             card.Shield = this.Shield;
             card.Id = this.Id;
             card.PoisonDamage = this.PoisonDamage;
+            card.IsLegendary = this.IsLegendary;
             return card;
         }
     }

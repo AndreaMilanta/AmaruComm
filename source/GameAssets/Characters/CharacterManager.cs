@@ -19,8 +19,8 @@ namespace AmaruCommon.GameAssets.Characters
         // Charactes definition
         private List<CharacterEnum> _playCharacters = new List<CharacterEnum>() {
             CharacterEnum.LEON,
-            CharacterEnum.LUNA,
             CharacterEnum.MORAIKA,
+            CharacterEnum.LUNA,
             CharacterEnum.YAKU
         };
 

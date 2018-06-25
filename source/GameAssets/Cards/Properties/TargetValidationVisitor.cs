@@ -31,6 +31,13 @@ namespace AmaruCommon.GameAssets.Cards.Properties
 
         }
 
+        private int CheckImmunity()
+        {
+            if (Target is CardTarget && ((CardTarget)Target).Card.creatureEffect is ImmunityCreatureEffect)
+                return -1;
+            return 0;
+        }
+
         public override int Visit(GainCPAttack attack)
         {
             return 0;
@@ -78,68 +85,67 @@ namespace AmaruCommon.GameAssets.Cards.Properties
             if (Target is CardTarget)
                 if (((CardTarget)Target).CardId == this.OwnerCard.Id)
                     return 0;
-            throw new InvalidTargetException();
+            return CheckImmunity();
         }
 
         public override int Visit(ReturnToHandAbility ability)
         {
             if (Target is CardTarget && Target.Character == this.Owner)
                 return 0;
-            throw new InvalidTargetException();
+            return CheckImmunity();
         }
 
         public override int Visit(SalazarAbility ability)
         {
             if (Target is PlayerTarget && Target.Character != this.Owner)
                 return 0;
-            throw new InvalidTargetException();
+            return CheckImmunity();
         }
 
         public override int Visit(SpendCPToDealDamageAbility ability)
         {
             // All allowed
             return 0;
-            throw new InvalidTargetException();
         }
 
         public override int Visit(ResurrectOrTakeFromGraveyardAbility ability)
         {
             if (Target == null)
                 return 0;
-            throw new InvalidTargetException();
+            return CheckImmunity();
         }
 
         public override int Visit(SeribuAbility ability)
         {
             if (Target == null)
                 return 0;
-            throw new InvalidTargetException();
+            return CheckImmunity();
         }
 
         public override int Visit(KillIfPDAbility ability)
         {
-            if (Target == null)
+            if (Target is CardTarget && ((CardTarget)Target).Card.PoisonDamage>=4)
                 return 0;
-            throw new InvalidTargetException();
+            return CheckImmunity();
         }
 
         public override int Visit(SummonAbility ability)
         {
             if (Target == null)
                 return 0;
-            throw new InvalidTargetException();
+            return CheckImmunity();
         }
 
         public override int Visit(AmaruIncarnationAbility ability)
         {
             if (Target is CardTarget && Target.Character != CharacterEnum.AMARU)
                 return 0;
-            throw new InvalidTargetException();
+            return CheckImmunity();
         }
 
         public override int Visit(DamageDependingOnCreatureNumberAbility ability)
         {
-            // all
+            //All
             return 0;
         }
 
@@ -147,78 +153,70 @@ namespace AmaruCommon.GameAssets.Cards.Properties
         {
             if (Target is CardTarget)
                 return 0;
-            throw new InvalidTargetException();
+            return CheckImmunity();
         }
 
         public override int Visit(DamageWithPDAbility ability)
         {
-            if (Target is CardTarget && Target.Character == Owner)
+            if (Target is CardTarget)
                 return 0;
-            throw new InvalidTargetException();
+            return CheckImmunity();
         }
 
         public override int Visit(GiveEPAbility ability)
         {
-            if (Target is CardTarget && Target.Character != Owner)
+            if (Target is CardTarget)
                 return 0;
-            throw new InvalidTargetException();
+            return CheckImmunity();
         }
 
         public override int Visit(GainCPAbility ability)
         {
             if (Target == null)
                 return 0;
-            if (Target is CardTarget)
-                if (((CardTarget)Target).CardId == this.OwnerCard.Id)
-                    return 0;
-            throw new InvalidTargetException();
+            return CheckImmunity();
         }
 
         public override int Visit(DoubleHPAbility ability)
         {
             if (Target == null)
                 return 0;
-            if (Target is CardTarget)
-                if (((CardTarget)Target).CardId == this.OwnerCard.Id)
-                    return 0;
-            throw new InvalidTargetException();
+            return CheckImmunity();
         }
 
         public override int Visit(DuplicatorSpellAbility ability)
         {
-            if (Target is CardTarget && Target.Character == Owner)
+            if (Target is CardTarget)
                 return 0;
-            throw new InvalidTargetException();
+            return CheckImmunity();
         }
 
         public override int Visit(AddEPAndDrawSpellAbility spellAbility)
         {
             if (Target is CardTarget && Target.Character == Owner)
                 return 0;
-            throw new InvalidTargetException();
+            return CheckImmunity();
         }
 
         public override int Visit(PDDamageToCreatureSpellAbility spellAbility)
         {
-            if (Target is CardTarget && Target.Character != Owner)
+            if (Target is CardTarget)
                 return 0;
-            throw new InvalidTargetException();
+            return CheckImmunity();
         }
 
         public override int Visit(ResurrectSpecificCreatureSpellAbility spellAbility)
         {
-            // TODO: Check!!
             if (Target == null)
                 return 0;
-            throw new InvalidTargetException();
+            return CheckImmunity();
         }
 
         public override int Visit(ResurrectOrReturnToHandSpellAbility spellAbility)
         {
-            // TODO: Check!!
             if (Target == null)
                 return 0;
-            throw new InvalidTargetException();
+            return CheckImmunity();
         }
 
         public override int Visit(GiveHPSpellAbility spellAbility)
@@ -232,7 +230,7 @@ namespace AmaruCommon.GameAssets.Cards.Properties
             // TODO: Check!!
             if (Target == null)
                 return 0;
-            throw new InvalidTargetException();
+            return CheckImmunity();
         }
 
         public override int Visit(AttackFromInnerSpellAbility spellAbility)
@@ -240,49 +238,49 @@ namespace AmaruCommon.GameAssets.Cards.Properties
             // TODO: Check!!
             if (Target == null)
                 return 0;
-            throw new InvalidTargetException();
+            return CheckImmunity();
         }
 
         public override int Visit(DealDamageDependingOnPDNumberSpellAbility spellAbility)
         {
             if (Target.Character != Owner)
                 return 0;
-            throw new InvalidTargetException();
+            return CheckImmunity();
         }
 
         public override int Visit(DealDamageToEverythingSpellAbility spellAbility)
         {
             if (Target == null)
                 return 0;
-            throw new InvalidTargetException();
+            return CheckImmunity();
         }
 
         public override int Visit(DealTotDamageToTotTargetsSpellAbility spellAbility)
         {
             if (Target.Character != Owner)
                 return 0;
-            throw new InvalidTargetException();
+            return CheckImmunity();
         }
 
         public override int Visit(DamagePDToAllCreaturesOfTargetPlayerSpellAbility spellAbility)
         {
             if (Target is PlayerTarget && Target.Character != Owner)
                 return 0;
-            throw new InvalidTargetException();
+            return CheckImmunity();
         }
 
         public override int Visit(DealDamageDependingOnMAXHPSpellAbility speelAbility)
         {
             if (Target.Character != Owner)
                 return 0;
-            throw new InvalidTargetException();
+            return CheckImmunity();
         }
 
         public override int Visit(AttackEqualToHPSpellAbility spellAbility)
         {
             if (Target is CardTarget)
                 return 0;
-            throw new InvalidTargetException();
+            return CheckImmunity();
         }
 
         public override int Visit(HalveDamageIfPDEffect halveDamageIfPDEffect)
