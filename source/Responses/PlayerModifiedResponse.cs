@@ -1,4 +1,5 @@
 ﻿using AmaruCommon.GameAssets.Characters;
+using AmaruCommon.GameAssets.Players;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,12 @@ namespace AmaruCommon.Responses
             this.Character = character;
             this.NewMana = newMana;
             this.NewHealth = newHealth;
+        }
+        public PlayerMod(Player player)
+        {
+            this.Character = player.Character;
+            this.NewMana = player.Mana;
+            this.NewHealth = player.Health;
         }
     }
 
