@@ -37,7 +37,7 @@ namespace AmaruCommon.GameAssets.Players
         public LimitedList<Card> Hand { get; private set; } = new LimitedList<Card>(AmaruConstants.HAND_MAX_SIZE);
         public LimitedList<CreatureCard> Inner { get; private set;} = new LimitedList<CreatureCard>(AmaruConstants.INNER_MAX_SIZE);
         public LimitedList<CreatureCard> Outer { get; private set; } = new LimitedList<CreatureCard>(AmaruConstants.OUTER_MAX_SIZE);
-        public List<SpellCard> PlayedSpell { get; private set; } = new List<SpellCard>();
+        public List<SpellCard> PlayedSpell { get; set; } = new List<SpellCard>();
         private ReadOnlyDictionary<Place, IEnumerable<Card>> _cardDict; 
 
         // Communication

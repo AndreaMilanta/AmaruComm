@@ -18,7 +18,7 @@ namespace AmaruCommon.GameAssets.Cards
         public Shield Shield { get; private set; } = Shield.NONE;
         public CreatureEffect creatureEffect { get; private set; }
         public Ability Ability { get; private set; }
-        public Attack Attack { get; private set; }
+        public Attack Attack { get; set; }
         public bool IsLegendary { get; private set; }
         public int PoisonDamage { get; set; } = 0;
 
