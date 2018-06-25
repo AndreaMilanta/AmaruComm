@@ -10,7 +10,7 @@ namespace AmaruCommon.Constants
     {
         //IPv4 Credentials
         public const string ServerIp = "127.0.0.1";     // Main Server IP Address
-        //public const string ServerIp = "192.168.1.218";     // Main Server IP Address
+        //public const string ServerIp = "192.168.1.10";     // Main Server IP Address
         public const int ServerPort = 5555;             // Main Server Port
 
         //Data Transfer

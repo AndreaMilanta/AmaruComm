@@ -11,6 +11,7 @@ namespace AmaruCommon.Responses
         void Visit(DrawCardResponse drawCardResponse);
         void Visit(GameFinishedResponse gameFinishedResponse);
         void Visit(PlayerKilledResponse playerKilledResponse);
+        void Visit(GraveyardChangedResponse graveyardChangedResponse);
         void Visit(CardsModifiedResponse cardsModifiedResponse);
         void Visit(PlayerModifiedResponse playerModifiedResponse);
         void Visit(MoveCreatureResponse moveCreatureResponse);

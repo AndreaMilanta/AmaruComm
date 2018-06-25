@@ -116,12 +116,6 @@ namespace AmaruCommon.GameAssets.Players
             }
         }
 
-        public void Refresh()
-        {
-            Inner.RemoveAll(c => c.Health <= 0);
-            Outer.RemoveAll(c => c.Health <= 0);
-        }
-
         public Card Draw()
         {
             if (Deck.Count == 0)
