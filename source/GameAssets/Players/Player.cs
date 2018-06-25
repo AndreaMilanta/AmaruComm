@@ -118,12 +118,8 @@ namespace AmaruCommon.GameAssets.Players
 
         public void Refresh()
         {
-            foreach (CreatureCard card in Inner)
-                if (card.Health <= 0)
-                    Inner.Remove(card);
-            foreach (CreatureCard card in Outer)
-                if (card.Health <= 0)
-                    Outer.Remove(card);
+            Inner.RemoveAll(c => c.Health <= 0);
+            Outer.RemoveAll(c => c.Health <= 0);
         }
 
         public Card Draw()
