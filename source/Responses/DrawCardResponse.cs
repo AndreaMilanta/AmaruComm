@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace AmaruCommon.Responses
 {
+    [Serializable]
     public class DrawCardResponse : Response
     {
         public CharacterEnum Picker { get; private set; }
