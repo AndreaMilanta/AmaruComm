@@ -8,6 +8,7 @@ namespace AmaruCommon.Responses
         void Visit(MainTurnResponse mainTurnResponse);
         void Visit(PlayACreatureResponse playACreatureResponse);
         void Visit(PlayASpellResponse playASpellResponse);
+        void Visit(CardsDrawnResponse cardsDrawnResponse);
         void Visit(DrawCardResponse drawCardResponse);
         void Visit(GameFinishedResponse gameFinishedResponse);
         void Visit(PlayerKilledResponse playerKilledResponse);

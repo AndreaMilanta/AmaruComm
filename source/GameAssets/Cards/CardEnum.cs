@@ -73,5 +73,35 @@ namespace AmaruCommon.GameAssets.Cards
             this.Character = CharacterEnum.AMARU;
             this.AmaruCard = cardEnum;
         }
+
+        public override bool Equals(object obj)
+        {
+            if (obj is CardEnum)
+            {
+                CardEnum target = (CardEnum)obj;
+                if (this.Character == target.Character)
+                    switch (this.Character)
+                    {
+                        case CharacterEnum.AMARU: return this.AmaruCard == target.AmaruCard;
+                        case CharacterEnum.MORAIKA: return this.MoraikaCard == target.MoraikaCard;
+                        case CharacterEnum.LEON: return this.LeonCard == target.LeonCard;
+                        case CharacterEnum.LUNA: return this.LunaCard == target.LunaCard;
+                        case CharacterEnum.YAKU: return this.YakuCard == target.YakuCard;
+                        default: return false;
+                    }
+                return false;
+            }
+            else if (obj is Amaru)
+                return (this.Character == CharacterEnum.AMARU && this.AmaruCard == (Amaru)obj);
+            else if (obj is Moraika)
+                return (this.Character == CharacterEnum.MORAIKA && this.MoraikaCard == (Moraika)obj);
+            else if (obj is Leon)
+                return (this.Character == CharacterEnum.LEON && this.LeonCard == (Leon)obj);
+            else if (obj is Luna)
+                return (this.Character == CharacterEnum.LUNA && this.LunaCard == (Luna)obj);
+            else if (obj is Yaku)
+                return (this.Character == CharacterEnum.YAKU && this.YakuCard == (Yaku)obj);
+            return false;
+        }
     }
 }

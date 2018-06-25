@@ -13,9 +13,9 @@ namespace AmaruCommon.GameAssets.Cards
         private static int _absoluteId = 0;
         private static int NextId { get => _absoluteId++;}
 
-        private CardEnum _cardEnum;
+        public CardEnum CardEnum;
         // Properties
-        public Card Original { get => _cardEnum.Card; }
+        public Card Original { get => CardEnum.Card; }
         public int Id { get; set; }
         public int Cost { get; set; }
         public string Name { get; private set; }
@@ -26,7 +26,7 @@ namespace AmaruCommon.GameAssets.Cards
                 this.Id = NextId;
             else
                 this.Id = id;
-            this._cardEnum = cardEnum;
+            this.CardEnum = cardEnum;
             this.Cost = cost;
             this.Name = name;
         }
