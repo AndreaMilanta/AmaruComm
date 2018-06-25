@@ -216,7 +216,7 @@ namespace AmaruCommon.GameAssets.Cards.Properties
         {
             if (Target == null)
                 return 0;
-            return CheckImmunity();
+            return -1;
         }
 
         public override int Visit(GiveHPSpellAbility spellAbility)
