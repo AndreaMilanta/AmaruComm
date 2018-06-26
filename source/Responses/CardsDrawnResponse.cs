@@ -15,9 +15,11 @@ namespace AmaruCommon.Responses
         public Place Source { get; private set; }
         public Place Dest { get; private set; }
         public CreatureCard Card { get; private set; }
+        public CharacterEnum Owner { get; private set; }
 
-        public CardMovement(Place source, Place dest, CreatureCard card)
+        public CardMovement(CharacterEnum owner, Place source, Place dest, CreatureCard card)
         {
+            this.Owner = owner;
             this.Source = source;
             this.Dest = dest;
             this.Card = card;
@@ -42,10 +44,10 @@ namespace AmaruCommon.Responses
             this.MovedCards = new List<CardMovement>() { movedCard };
         }
 
-        public CardsDrawnResponse(CharacterEnum caller, Place source, Place dest, CreatureCard card)
+        public CardsDrawnResponse(CharacterEnum caller, CharacterEnum owner, Place source, Place dest, CreatureCard card)
         {
             this.Caller = caller;
-            this.MovedCards = new List<CardMovement>() { new CardMovement(source, dest, card) };
+            this.MovedCards = new List<CardMovement>() { new CardMovement(owner, source, dest, card) };
         }
 
 
