@@ -8,7 +8,7 @@ namespace AmaruCommon.Responses
         void Visit(MainTurnResponse mainTurnResponse);
         void Visit(PlayACreatureResponse playACreatureResponse);
         void Visit(PlayASpellResponse playASpellResponse);
-        void Visit(CardsDrawnResponse cardsDrawnResponse);
+        void Visit(EvocationResponse evocationResponse);
         void Visit(DrawCardResponse drawCardResponse);
         void Visit(GameFinishedResponse gameFinishedResponse);
         void Visit(PlayerKilledResponse playerKilledResponse);
@@ -16,6 +16,7 @@ namespace AmaruCommon.Responses
         void Visit(CardsModifiedResponse cardsModifiedResponse);
         void Visit(PlayerModifiedResponse playerModifiedResponse);
         void Visit(MoveCreatureResponse moveCreatureResponse);
+        void Visit(ResurrectResponse resurrectResponse);
         void Visit(AttackCreatureResponse attackCreatureResponse);
         void Visit(AttackPlayerResponse attackPlayerResponse);
     }
