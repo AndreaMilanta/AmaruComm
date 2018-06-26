@@ -26,6 +26,7 @@ namespace AmaruCommon.GameAssets.Cards.Properties
         public abstract int Visit(PoisonAttack attack);
         public abstract int Visit(SalazarAttack attack);
         public abstract int Visit(SeribuAttack attack);
+        public abstract int Visit(IfKillGainHPAttack attack);
         public abstract int Visit(SimpleAttack attack);
 
         // Ability
@@ -44,6 +45,7 @@ namespace AmaruCommon.GameAssets.Cards.Properties
         public abstract int Visit(GiveEPAbility ability);
         public abstract int Visit(GainCPAbility gainCPAbility);
         public abstract int Visit(DoubleHPAbility doubleHPAbility);
+        public abstract int Visit(DrawCardAbility drawCardAbility);
 
         // SpellAbility
         public abstract int Visit(DuplicatorSpellAbility duplicatorSpellAbility);
@@ -71,7 +73,5 @@ namespace AmaruCommon.GameAssets.Cards.Properties
         public abstract int Visit(DrawCardAndAttack drawCardAndAttack);
         public abstract int Visit(AttackBuffInSpecificZoneEffect attackBuffInSpecificZoneEffect);
         public abstract int Visit(ImmunityCreatureEffect immunityCreatureEffect);
-
-        
     }
 }

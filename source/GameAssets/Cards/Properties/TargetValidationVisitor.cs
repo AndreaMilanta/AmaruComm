@@ -78,6 +78,11 @@ namespace AmaruCommon.GameAssets.Cards.Properties
             return 0;
         }
 
+        public override int Visit(IfKillGainHPAttack attack)
+        {
+            return 0;
+        }
+
         public override int Visit(GainHPAbility ability)
         {
             if (Target == null)
@@ -175,6 +180,11 @@ namespace AmaruCommon.GameAssets.Cards.Properties
             if (Target == null)
                 return 0;
             return -1;
+        }
+
+        public override int Visit(DrawCardAbility ability)
+        {
+            return 0;
         }
 
         public override int Visit(DoubleHPAbility ability)
