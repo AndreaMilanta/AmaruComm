@@ -7,11 +7,12 @@ namespace AmaruCommon.GameAssets.Characters
     /// </summary>
     public enum CharacterEnum
     {
-        MORAIKA = 0,
+        MORAIKA = 4,
         LUNA = 1,
         LEON = 2,
         YAKU = 3,
         AMARU = -1,
-        INVALID = -100
+        //INVALID = -100
+        INVALID = 0
     };
 }
