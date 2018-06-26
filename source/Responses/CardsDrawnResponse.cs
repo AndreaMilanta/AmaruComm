@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace AmaruCommon.Responses
 {
+    /*
     [Serializable]
     public struct CardMovement
     {
@@ -55,5 +56,5 @@ namespace AmaruCommon.Responses
         {
             visitor.Visit(this);
         }
-    }
+    }//*/
 }
