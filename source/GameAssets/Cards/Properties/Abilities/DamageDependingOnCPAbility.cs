@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 namespace AmaruCommon.GameAssets.Cards.Properties.Abilities
 {
     [Serializable]
-    public class SpendCPToDealDamageAbility : Ability
+    public class DamageDependingOnCPAbility: Ability
     {
 
-        public SpendCPToDealDamageAbility(int cost, int numTarget) : base(cost, numTarget)
+        public DamageDependingOnCPAbility(int cost, int numTarget) : base(cost, numTarget)
         {
 
         }

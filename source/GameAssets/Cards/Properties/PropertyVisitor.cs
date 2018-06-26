@@ -32,7 +32,7 @@ namespace AmaruCommon.GameAssets.Cards.Properties
         public abstract int Visit(GainHPAbility ability);
         public abstract int Visit(ReturnToHandAbility returnToHandAbility);
         public abstract int Visit(SalazarAbility salazarAbility);
-        public abstract int Visit(SpendCPToDealDamageAbility spendCPToDealDamageAbility);
+        public abstract int Visit(DamageDependingOnCPAbility spendCPToDealDamageAbility);
         public abstract int Visit(ResurrectOrTakeFromGraveyardAbility resurrectAbility);
         public abstract int Visit(SeribuAbility seribuAbility);
         public abstract int Visit(KillIfPDAbility killIfPDAbility);

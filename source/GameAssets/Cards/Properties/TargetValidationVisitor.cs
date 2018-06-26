@@ -103,7 +103,7 @@ namespace AmaruCommon.GameAssets.Cards.Properties
             return -1;
         }
 
-        public override int Visit(SpendCPToDealDamageAbility ability)
+        public override int Visit(DamageDependingOnCPAbility ability)
         {
             return CheckImmunity();
         }
