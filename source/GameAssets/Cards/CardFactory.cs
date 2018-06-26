@@ -53,7 +53,7 @@ namespace AmaruCommon.GameAssets.Cards
                 case Luna.RustyTaipan:
                     return new CreatureCard(new CardEnum(card), "Rusty Taipan", 3, 5, new PoisonAttack(1, 4), ability: new DamageWithPDAbility(1,3,1), shield: Shield.SHIELDMAIDEN);
                 case Luna.Rattlesnake:
-                    return new CreatureCard(new CardEnum(card), "Rattlesnake", 4, 4, new PoisonAttack(1, 2), ability: new KillIfPDAbility(1, 1, 2));
+                    return new CreatureCard(new CardEnum(card), "Rattlesnake", 4, 4, new PoisonAttack(1, 2), ability: new KillIfPDAbility(1, 1, 4));
                 case Luna.DragonSnake:
                     return new CreatureCard(new CardEnum(card), "Dragon Snake", 12, 7, new PoisonAttack(1, 5), creatureEffect: new CostLessForPDEffect(), shield: Shield.SHIELDUP);
                 case Luna.Plague:
