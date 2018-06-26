@@ -25,7 +25,7 @@ namespace AmaruCommon.GameAssets.Cards
                 case Moraika.PurewhiteAlbatross:
                     return new CreatureCard(new CardEnum(card), "Purewhite Albatross", 3, 4, new SimpleAttack(1, 2), creatureEffect: new GainHPForDamageEffect(), ability: new GainHPAbility(2,0,4), shield: Shield.SHIELDUP);
                 case Moraika.SacredOwl:
-                    return new CreatureCard(new CardEnum(card), "Sacred Owl", 3, 2, new SimpleAttack(1, 3), creatureEffect: new IfKillGainHPEffect(), shield: Shield.SHIELDUP);
+                    return new CreatureCard(new CardEnum(card), "Sacred Owl", 3, 2, new IfKillGainHPAttack(1, 3, 3), creatureEffect: new IfKillGainHPEffect(), shield: Shield.SHIELDUP);
                 case Moraika.ImperialTucan:
                     return new CreatureCard(new CardEnum(card), "Imperial Toucan", 4, 4, new SimpleAttack(1, 3),ability: new BonusAttackDependingOnHealthAbility(1,2,2));
                 case Moraika.WindFury:
@@ -111,7 +111,7 @@ namespace AmaruCommon.GameAssets.Cards
                 case Yaku.MuggerCrocodile:
                     return new CreatureCard(new CardEnum(card), "Mugger Crocodile", 5, 5, new DrawCardAndAttack(1, 4), shield:Shield.SHIELDMAIDEN);
                 case Yaku.ReaperKraken:
-                    return new CreatureCard(new CardEnum(card), "Reaper Kraken", 5, 4, new SimpleAttack(1, 3), ability: new ResurrectOrTakeFromGraveyardAbility(2,1,Place.HAND), shield: Shield.SHIELDMAIDEN);
+                    return new CreatureCard(new CardEnum(card), "Reaper Kraken", 5, 4, new SimpleAttack(1, 3), ability: new DrawCardAbility(1, 1, 0), shield: Shield.SHIELDMAIDEN);
                 case Yaku.KillerWhale:
                     return new CreatureCard(new CardEnum(card), "Giant Whale", 6, 8, new SimpleAttack(2, 5), ability: new ReturnToHandAbility(2,1), shield: Shield.BOTH);
                 case Yaku.EnergyMaker:
