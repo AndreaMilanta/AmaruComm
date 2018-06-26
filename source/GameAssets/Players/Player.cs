@@ -81,7 +81,7 @@ namespace AmaruCommon.GameAssets.Players
                 }
                 else if(c is CreatureCard)
                 {
-                    this.Deck.Push(((CreatureCard)c).clone());
+                    this.Deck.Push(((CreatureCard)c).Clone());
                 }
             }
             this.Hand = new LimitedList<Card>(AmaruConstants.HAND_MAX_SIZE);
@@ -93,18 +93,18 @@ namespace AmaruCommon.GameAssets.Players
                 }
                 else if (c is CreatureCard)
                 {
-                    this.Hand.Add(((CreatureCard)c).clone());
+                    this.Hand.Add(((CreatureCard)c).Clone());
                 }
             }
             this.Outer = new LimitedList<CreatureCard>(AmaruConstants.OUTER_MAX_SIZE);
             foreach (CreatureCard c in p.Outer)
             {
-                this.Outer.Add(c.clone());
+                this.Outer.Add(c.Clone());
             }
             this.Inner = new LimitedList<CreatureCard>(AmaruConstants.INNER_MAX_SIZE);
             foreach (CreatureCard c in p.Inner)
             {
-                this.Inner.Add(c.clone());
+                this.Inner.Add(c.Clone());
             }
 
             this.Character = p.Character;
