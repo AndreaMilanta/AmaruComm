@@ -44,7 +44,7 @@ namespace AmaruCommon.GameAssets.Cards
                 base.Visit(visitor, character, Ability);
             }
         }
-        public CreatureCard clone()
+        public CreatureCard Clone(bool copyId = true)
         {
             CreatureCard card = (CreatureCard)this.Original;
             card.Health = this.Health;
@@ -53,10 +53,11 @@ namespace AmaruCommon.GameAssets.Cards
             card.Ability = this.Ability;
             card.creatureEffect = this.creatureEffect;
             card.Shield = this.Shield;
-            card.Id = this.Id;
             card.PoisonDamage = this.PoisonDamage;
             card.IsLegendary = this.IsLegendary;
             card.IsCloned = this.IsCloned;
+            if (copyId)
+                card.Id = this.Id;
             return card;
         }
     }

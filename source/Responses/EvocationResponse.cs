@@ -16,13 +16,15 @@ namespace AmaruCommon.Responses
         public CreatureCard Original { get; private set; }
         public CreatureCard Evoked { get; private set; }
         public Place Destination { get; private set; }
+        public bool DeleteOriginal { get; private set; }
 
-        public EvocationResponse(CharacterEnum caller, CreatureCard original, CreatureCard evoked, Place destination)
+        public EvocationResponse(CharacterEnum caller, CreatureCard original, CreatureCard evoked, Place destination, bool deleteOriginal = false)
         {
             this.Caller = caller;
             this.Original = original;
             this.Evoked = evoked;
             this.Destination = destination;
+            this.DeleteOriginal = deleteOriginal;
         }
 
         public override void Visit(IResponseVisitor visitor)
