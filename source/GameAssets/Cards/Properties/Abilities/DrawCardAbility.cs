@@ -10,7 +10,7 @@ namespace AmaruCommon.GameAssets.Cards.Properties.Abilities
     public class DrawCardAbility : Ability
     {
         public int NumCardsToDraw { get; private set; }
-        public DrawCardAbility(int cost, int numCardsToDraw, int numTarget) : base(cost, 0)
+        public DrawCardAbility(int cost, int numCardsToDraw, int numTarget) : base(cost, numTarget)
         {
             this.NumCardsToDraw = numCardsToDraw;
         }

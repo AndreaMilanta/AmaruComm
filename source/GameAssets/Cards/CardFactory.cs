@@ -111,7 +111,7 @@ namespace AmaruCommon.GameAssets.Cards
                 case Yaku.MuggerCrocodile:
                     return new CreatureCard(new CardEnum(card), "Mugger Crocodile", 5, 5, new DrawCardAndAttack(1, 4), shield:Shield.SHIELDMAIDEN);
                 case Yaku.ReaperKraken:
-                    return new CreatureCard(new CardEnum(card), "Reaper Kraken", 5, 4, new SimpleAttack(1, 3), ability: new DrawCardAbility(1, 1, 0), shield: Shield.SHIELDMAIDEN);
+                    return new CreatureCard(new CardEnum(card), "Reaper Kraken", 5, 4, new SimpleAttack(1, 3), ability: new DrawCardAbility(2, 1, 0), shield: Shield.SHIELDMAIDEN);
                 case Yaku.KillerWhale:
                     return new CreatureCard(new CardEnum(card), "Giant Whale", 6, 8, new SimpleAttack(2, 5), ability: new ReturnToHandAbility(2,1), shield: Shield.BOTH);
                 case Yaku.EnergyMaker:

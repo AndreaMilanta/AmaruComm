@@ -29,7 +29,7 @@ namespace AmaruCommon.GameAssets.Cards
             this.Attack = attack;
             this.Ability = ability;
             this.Shield = shield;
-            this.IsLegendary = IsLegendary;
+            this.IsLegendary = isLegendary;
             this.creatureEffect = creatureEffect;
             this.IsCloned = isCloned;
         }
