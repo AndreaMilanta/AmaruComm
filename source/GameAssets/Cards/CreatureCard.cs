@@ -60,5 +60,18 @@ namespace AmaruCommon.GameAssets.Cards
                 card.Id = this.Id;
             return card;
         }
+
+        public int myPowerAttack()
+        {
+            if (this.Attack == null)
+            {
+                return 0;
+            } 
+            if (this.Attack is SimpleAttack)
+            {
+                return ((SimpleAttack)this.Attack).Power;
+            }
+            return 4;
+        }
     }
 }
