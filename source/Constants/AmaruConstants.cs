@@ -16,7 +16,7 @@ namespace AmaruCommon.Constants
 
         // Players
         public const int INITIAL_PLAYER_HEALTH = 20;    // Initial Health of a player
-        public const int INITIAL_AMARU_HEALTH = 30;     // Initial Health of Amaru
+        public const int INITIAL_AMARU_HEALTH = 50;     // Initial Health of Amaru
 
         // Decks Constants
         public const int INITIAL_HAND_SIZE = 3;     // Number of cards in hand at the beginning
