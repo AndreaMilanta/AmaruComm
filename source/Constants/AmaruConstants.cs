@@ -15,8 +15,8 @@ namespace AmaruCommon.Constants
         //public const int NUM_DISADVANTAGED = 0;     // Number of disadvantaged players (last - )
 
         // Players
-        public const int INITIAL_PLAYER_HEALTH = 3;    // Initial Health of a player
-        public const int INITIAL_AMARU_HEALTH = 1;     // Initial Health of Amaru
+        public const int INITIAL_PLAYER_HEALTH = 20;    // Initial Health of a player
+        public const int INITIAL_AMARU_HEALTH = 30;     // Initial Health of Amaru
 
         // Decks Constants
         public const int INITIAL_HAND_SIZE = 3;     // Number of cards in hand at the beginning
@@ -30,7 +30,7 @@ namespace AmaruCommon.Constants
 
         // Mana constants
         public const int MAX_MANA = 15;             // 
-        public const int MANA_TURN_FACTOR = 10;      // TODO: Change back to 1
+        public const int MANA_TURN_FACTOR = 1;      // TODO: Change back to 1
     }
 
     // Useful Enums
