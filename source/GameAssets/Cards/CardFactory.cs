@@ -83,7 +83,7 @@ namespace AmaruCommon.GameAssets.Cards
                 case Leon.BloodborneRhino:
                     return new CreatureCard(new CardEnum(card), "Bloodborne Rhino", 3, 4, new SimpleAttack(1, 3), ability: new DamageDependingOnCreatureNumberAbility(2,1,4,Place.INNER), shield: Shield.SHIELDMAIDEN);
                 case Leon.FieryLion:
-                    return new CreatureCard(new CardEnum(card), "Fiery Lion", 4, 5, new SimpleAttack(1, 3) , creatureEffect: new AttackBuffInSpecificZoneEffect());
+                    return new CreatureCard(new CardEnum(card), "Fiery Lion", 4, 5, new SimpleAttack(1, 4) , creatureEffect: new AttackBuffInSpecificZoneEffect());
                 case Leon.Duplicator:
                     return new SpellCard(new CardEnum(card), "Duplicator", 2, new DuplicatorSpellAbility());
                 case Leon.WarHorn:
@@ -107,7 +107,7 @@ namespace AmaruCommon.GameAssets.Cards
                 case Yaku.RoyalStarfish:
                     return new CreatureCard(new CardEnum(card), "Royal Starfish", 2, 2, new SimpleAttack(1, 2), ability: new GiveEPAbility(1,1,1));
                 case Yaku.BigClawSnappingShrimp:
-                    return new CreatureCard(new CardEnum(card), "Big-Claw Snapping Shrimp", 3, 3, new SimpleAttack(1, 2), ability: new DamageDependingOnCPAbility(3,1));
+                    return new CreatureCard(new CardEnum(card), "Big-Claw Snapping Shrimp", 3, 3, new SimpleAttack(1, 2), ability: new DamageDependingOnCPAbility(2,1));
                 case Yaku.MuggerCrocodile:
                     return new CreatureCard(new CardEnum(card), "Mugger Crocodile", 5, 5, new DrawCardAndAttack(1, 4), shield:Shield.SHIELDMAIDEN);
                 case Yaku.ReaperKraken:
