@@ -157,7 +157,14 @@ namespace AmaruCommon.GameAssets.Cards.Properties
         public override int Visit(BonusAttackDependingOnHealthAbility ability)
         {
             if (Target is CardTarget)
+            {
+                if(((CardTarget)Target).Card.Attack is null)
+                {
+                    return -1;
+                }
                 return CheckImmunity();
+            }
+
             return -1;
         }
 
